@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/business/business.iml" filepath="$PROJECT_DIR$/business/business.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud.iml" filepath="$PROJECT_DIR$/cloud/cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-api-message/cloud-api-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-api-message/cloud-api-message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-dto-message/cloud-dto-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-dto-message/cloud-dto-message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-feign-message/cloud-feign-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-feign-message/cloud-feign-message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-service-message/cloud-service-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-service-message/cloud-service-message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons/comm-dto/comm-dto.iml" filepath="$PROJECT_DIR$/commons/comm-dto/comm-dto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons/comm-provider/comm-provider.iml" filepath="$PROJECT_DIR$/commons/comm-provider/comm-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons/comm-utils/comm-utils.iml" filepath="$PROJECT_DIR$/commons/comm-utils/comm-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons/commons.iml" filepath="$PROJECT_DIR$/commons/commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configuration/config-feign/config-feign.iml" filepath="$PROJECT_DIR$/configuration/config-feign/config-feign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configuration/config-sentinel/config-sentinel.iml" filepath="$PROJECT_DIR$/configuration/config-sentinel/config-sentinel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configuration/configuration.iml" filepath="$PROJECT_DIR$/configuration/configuration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dependencies/dependencies.iml" filepath="$PROJECT_DIR$/dependencies/dependencies.iml" />
+      <module fileurl="file://$PROJECT_DIR$/business/feign-oauth/feign-oauth.iml" filepath="$PROJECT_DIR$/business/feign-oauth/feign-oauth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/message/login-log-admin/login-log-admin.iml" filepath="$PROJECT_DIR$/message/login-log-admin/login-log-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/message/message.iml" filepath="$PROJECT_DIR$/message/message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parent.iml" filepath="$PROJECT_DIR$/parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/business/feign-profile/profile-feign.iml" filepath="$PROJECT_DIR$/business/feign-profile/profile-feign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/business/service-profile/profile-service.iml" filepath="$PROJECT_DIR$/business/service-profile/profile-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/provider/provider.iml" filepath="$PROJECT_DIR$/provider/provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/provider/provider-api-admin/provider-api-admin.iml" filepath="$PROJECT_DIR$/provider/provider-api-admin/provider-api-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/provider/provider-api-login-log-admin/provider-api-login-log-admin.iml" filepath="$PROJECT_DIR$/provider/provider-api-login-log-admin/provider-api-login-log-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/provider/provider-service-admin/provider-service-admin.iml" filepath="$PROJECT_DIR$/provider/provider-service-admin/provider-service-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/provider/provider-service-login-log-admin/provider-service-login-log-admin.iml" filepath="$PROJECT_DIR$/provider/provider-service-login-log-admin/provider-service-login-log-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/business/service-oauth/service-oauth.iml" filepath="$PROJECT_DIR$/business/service-oauth/service-oauth.iml" />
+    </modules>
+  </component>
+</project>
