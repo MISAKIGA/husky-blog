@@ -1,0 +1,3 @@
+com\misakiga\husky\provider\AdminLoginLogBootstrap.class
+com\misakiga\husky\provider\service\UmsAdminLoginLogServiceImpl.class
+com\misakiga\husky\provider\mapper\UmsAdminLoginLogMapper.class

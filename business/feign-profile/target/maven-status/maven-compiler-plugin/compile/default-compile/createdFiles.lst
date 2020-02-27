@@ -1,0 +1,6 @@
+com\misakiga\husky\business\dto\params\ProfileParam.class
+com\misakiga\husky\business\dto\params\IconParam.class
+com\misakiga\husky\business\feign\fallback\ProfileFeignFallback.class
+com\misakiga\husky\business\dto\UmsAdminDTO.class
+com\misakiga\husky\business\feign\ProfileFeign.class
+com\misakiga\husky\business\dto\params\PasswordParam.class

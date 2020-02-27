@@ -1,0 +1,12 @@
+com\misakiga\husky\commons\utils\OkHttpClientUtil$MyNetCall.class
+com\misakiga\husky\business\BusinessException.class
+com\misakiga\husky\commons\dto\IpInfo.class
+com\misakiga\husky\commons\dto\ResponseResult.class
+com\misakiga\husky\commons\utils\OkHttpClientUtil$1.class
+com\misakiga\husky\business\BusinessExceptionHandler.class
+com\misakiga\husky\business\BusinessStatus.class
+com\misakiga\husky\commons\utils\UserAgentUtils.class
+com\misakiga\husky\commons\utils\OkHttpClientUtil.class
+com\misakiga\husky\commons\utils\MapperUtils.class
+com\misakiga\husky\commons\utils\OkHttpClientUtil$2.class
+com\misakiga\husky\commons\utils\MapperUtils$1.class

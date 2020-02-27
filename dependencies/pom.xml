@@ -25,6 +25,9 @@
 
         <!-- Ali Cloud -->
         <aliyun-sdk-oss.version>3.6.0</aliyun-sdk-oss.version>
+
+        <!-- Docker -->
+        <docker.image.prefix>bozai</docker.image.prefix>
     </properties>
 
     <licenses>

@@ -1,0 +1,4 @@
+com\misakiga\husky\business\controller\fallback\ProfileControllerFallback.class
+com\misakiga\husky\business\controller\ProfileController.class
+com\misakiga\husky\business\configure\ProfileResourceServerConfiguration.class
+com\misakiga\husky\business\ProfileBootstrap.class

@@ -1,0 +1,5 @@
+com\misakiga\husky\provider\service\fallback\UmsAdminServiceFallback.class
+com\misakiga\husky\provider\mapper\UmsAdminMapper.class
+com\misakiga\husky\provider\AdminBootstrap.class
+com\misakiga\husky\provider\service\UmsAdminServiceImpl.class
+com\misakiga\husky\provider\configure\UmsAdminResourceConfiguration.class

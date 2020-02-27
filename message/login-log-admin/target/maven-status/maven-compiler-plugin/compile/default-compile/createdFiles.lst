@@ -1,0 +1,3 @@
+com\misakiga\husky\message\MessageAdminLoginLogBootstrap.class
+com\misakiga\husky\message\sink\AdminLoginLogSink.class
+com\misakiga\husky\message\consumer\AdminLoginLogReceive.class

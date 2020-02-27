@@ -1,0 +1,2 @@
+com\misakiga\husky\configuration\FeignRequestConfiguration.class
+com\misakiga\husky\interceptor\FeignRequestInterceptor.class

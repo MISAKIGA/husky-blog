@@ -24,6 +24,7 @@ import javax.annotation.Resource;
 
 /**
  * 个人信息管理s
+ * @author MISAKIGA
  */
 @RestController
 @RequestMapping(value = "profile")

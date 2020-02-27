@@ -3,6 +3,7 @@ package com.misakiga.husky.business.controller;
 import com.google.common.collect.Maps;
 import com.misakiga.husky.business.BusinessException;
 import com.misakiga.husky.business.BusinessStatus;
+import com.misakiga.husky.business.dto.LoginInfo;
 import com.misakiga.husky.business.dto.LoginParam;
 import com.misakiga.husky.business.feign.ProfileFeign;
 import com.misakiga.husky.cloud.api.MessageService;
@@ -16,6 +17,8 @@ import com.misakiga.husky.provider.domain.UmsAdmin;
 import okhttp3.Response;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -30,6 +33,9 @@ import java.util.Date;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * @author MISAKIGA
+ */
 @RestController
 public class LoginController {
 
@@ -100,6 +106,28 @@ public class LoginController {
         //发送管理员登录日志
         sendAdminLoginLog(userDetails.getUsername(),request);
         return new ResponseResult<Map<String,Object>>(BusinessStatus.OK.getCode(), "登录成功",result);
+    }
+
+    public ResponseResult<LoginInfo> info() throws Exception {
+
+        //获取用户认证信息
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        String jsonString = profileFeign.info(authentication.getName());
+
+        //获取当前已认证的用户信息
+        UmsAdmin umsAdmin = MapperUtils.json2pojoByTree(jsonString, "data",UmsAdmin.class);
+
+        //如果是熔断之后返回的结果
+        if(umsAdmin.getUsername() == null){
+            return MapperUtils.json2pojo(jsonString,ResponseResult.class);
+        }
+
+        LoginInfo loginInfo = new LoginInfo();
+        loginInfo.setName(umsAdmin.getUsername());
+        loginInfo.setAvatar(umsAdmin.getIcon());
+
+        return new ResponseResult<>(BusinessStatus.OK.getCode(),"获取用户信息",loginInfo);
     }
 
     private boolean sendAdminLoginLog(String username,HttpServletRequest request){

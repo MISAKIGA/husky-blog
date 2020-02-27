@@ -76,6 +76,8 @@
                     <mainClass>com.misakiga.husky.cloud.CloudMessageBootstrap</mainClass>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
+
 </project>
