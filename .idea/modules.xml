@@ -10,10 +10,11 @@
       <module fileurl="file://$PROJECT_DIR$/business/business-user-center/business-service-profile/business-service-profile.iml" filepath="$PROJECT_DIR$/business/business-user-center/business-service-profile/business-service-profile.iml" />
       <module fileurl="file://$PROJECT_DIR$/business/business-user-center/business-user-center.iml" filepath="$PROJECT_DIR$/business/business-user-center/business-user-center.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud.iml" filepath="$PROJECT_DIR$/cloud/cloud.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-api-message/cloud-api-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-api-message/cloud-api-message.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-dto-message/cloud-dto-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-dto-message/cloud-dto-message.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-feign-message/cloud-feign-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-feign-message/cloud-feign-message.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-service-message/cloud-service-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-service-message/cloud-service-message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-message/cloud-api-message/cloud-api-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-message/cloud-api-message/cloud-api-message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-message/cloud-dto-message/cloud-dto-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-message/cloud-dto-message/cloud-dto-message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-message/cloud-feign-message/cloud-feign-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-message/cloud-feign-message/cloud-feign-message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-message/cloud-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-message/cloud-message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-message/cloud-service-message/cloud-service-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-message/cloud-service-message/cloud-service-message.iml" />
       <module fileurl="file://$PROJECT_DIR$/commons/comm-dto/comm-dto.iml" filepath="$PROJECT_DIR$/commons/comm-dto/comm-dto.iml" />
       <module fileurl="file://$PROJECT_DIR$/commons/comm-provider/comm-provider.iml" filepath="$PROJECT_DIR$/commons/comm-provider/comm-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/commons/comm-utils/comm-utils.iml" filepath="$PROJECT_DIR$/commons/comm-utils/comm-utils.iml" />

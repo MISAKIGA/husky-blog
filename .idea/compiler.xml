@@ -42,6 +42,7 @@
       <module name="cloud-api-message" target="1.8" />
       <module name="cloud-dto-message" target="1.8" />
       <module name="cloud-feign-message" target="1.8" />
+      <module name="cloud-message" target="1.8" />
       <module name="cloud-service-message" target="1.8" />
       <module name="comm-dto" target="1.8" />
       <module name="comm-provider" target="1.8" />

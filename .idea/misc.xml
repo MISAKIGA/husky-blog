@@ -12,6 +12,10 @@
         <option value="$PROJECT_DIR$/business/feign-profile/pom.xml" />
         <option value="$PROJECT_DIR$/business/service-oauth/pom.xml" />
         <option value="$PROJECT_DIR$/business/service-profile/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/cloud-api-message/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/cloud-dto-message/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/cloud-feign-message/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/cloud-service-message/pom.xml" />
         <option value="$PROJECT_DIR$/commons/comm-service/pom.xml" />
         <option value="$PROJECT_DIR$/message/message-user-center/login-log-admin/pom.xml" />
         <option value="$PROJECT_DIR$/provider/provider-user-center/provider-api-admin/pom.xml" />

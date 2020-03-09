@@ -5,10 +5,10 @@
     <file url="file://$PROJECT_DIR$/business/business-oauth2/business-service-oauth2/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/business/business-user-center/business-client-profile/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/business/business-user-center/business-service-profile/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud/cloud-api-message/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud/cloud-dto-message/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud/cloud-feign-message/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud/cloud-service-message/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/cloud-message/cloud-api-message/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/cloud-message/cloud-dto-message/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/cloud-message/cloud-feign-message/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/cloud-message/cloud-service-message/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/commons/comm-dto/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/commons/comm-provider/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/commons/comm-utils/src/main/java" charset="UTF-8" />
