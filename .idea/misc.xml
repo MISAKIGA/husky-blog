@@ -6,6 +6,29 @@
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/business/feign-oauth/pom.xml" />
+        <option value="$PROJECT_DIR$/business/feign-profile/pom.xml" />
+        <option value="$PROJECT_DIR$/business/service-oauth/pom.xml" />
+        <option value="$PROJECT_DIR$/business/service-profile/pom.xml" />
+        <option value="$PROJECT_DIR$/commons/comm-service/pom.xml" />
+        <option value="$PROJECT_DIR$/message/message-user-center/login-log-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/provider/provider-user-center/provider-api-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/provider/provider-user-center/provider-api-login-log-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/provider/provider-user-center/provider-api-member/pom.xml" />
+        <option value="$PROJECT_DIR$/provider/provider-user-center/provider-service-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/provider/provider-user-center/provider-service-login-log-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/provider/provider-user-center/provider-service-member/pom.xml" />
+        <option value="$PROJECT_DIR$/provider/provider-user-center/uc-api-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/provider/provider-user-center/uc-api-login-log-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/provider/provider-user-center/uc-api-member/pom.xml" />
+        <option value="$PROJECT_DIR$/provider/provider-user-center/uc-model/pom.xml" />
+        <option value="$PROJECT_DIR$/provider/provider-user-center/uc-service-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/provider/provider-user-center/uc-service-login-log-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/provider/provider-user-center/uc-service-member/pom.xml" />
+      </set>
+    </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

@@ -5,6 +5,9 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * @author MISAKIGA
+ */
 @Data
 public class UmsAdminLoginLogDTO implements Serializable {
 

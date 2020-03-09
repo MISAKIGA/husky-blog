@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/business/feign-oauth/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/business/feign-profile/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/business/service-oauth/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/business/service-profile/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/business/business-oauth2/business-client-oauth2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/business/business-oauth2/business-service-oauth2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/business/business-user-center/business-client-profile/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/business/business-user-center/business-service-profile/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud/cloud-api-message/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud/cloud-dto-message/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud/cloud-feign-message/src/main/java" charset="UTF-8" />
@@ -15,10 +15,13 @@
     <file url="file://$PROJECT_DIR$/configuration/config-feign/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/configuration/config-sentinel/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gateway/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/message/login-log-admin/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/provider/provider-api-admin/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/provider/provider-api-login-log-admin/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/provider/provider-service-admin/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/provider/provider-service-login-log-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/message/message-user-center/message-uc-login-log-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provider/provider-user-center/provider-uc-api-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provider/provider-user-center/provider-uc-api-login-log-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provider/provider-user-center/provider-uc-api-member/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provider/provider-user-center/provider-uc-model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provider/provider-user-center/provider-uc-service-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provider/provider-user-center/provider-uc-service-login-log-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provider/provider-user-center/provider-uc-service-member/src/main/java" charset="UTF-8" />
   </component>
 </project>

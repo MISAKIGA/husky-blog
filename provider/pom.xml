@@ -98,10 +98,7 @@
     </dependencies>
 
     <modules>
-        <module>provider-api-admin</module>
-        <module>provider-service-admin</module>
-        <module>provider-api-login-log-admin</module>
-        <module>provider-service-login-log-admin</module>
+        <module>provider-user-center</module>
     </modules>
 
 </project>

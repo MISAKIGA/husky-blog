@@ -56,11 +56,8 @@
     </dependencies>
 
     <modules>
-        <module>feign-oauth</module>
-        <module>service-oauth</module>
-        <module>feign-profile</module>
-        <module>service-profile</module>
-
+        <module>business-oauth2</module>
+        <module>business-user-center</module>
     </modules>
 
 </project>
