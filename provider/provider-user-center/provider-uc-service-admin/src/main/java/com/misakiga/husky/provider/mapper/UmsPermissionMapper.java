@@ -11,5 +11,10 @@ import java.util.List;
  */
 public interface UmsPermissionMapper extends MyMapper<UmsPermission> {
 
+    /**
+     * 根据角色返回拥有得权限
+     * @param id
+     * @return UmsPermission
+     */
     List<UmsPermission> selectPermissionByRoleId(@Param("id") Long id);
 }
