@@ -34,5 +34,10 @@
             <artifactId>config-feign</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.misakiga.husky</groupId>
+            <artifactId>provider-uc-model</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
     </dependencies>
 </project>

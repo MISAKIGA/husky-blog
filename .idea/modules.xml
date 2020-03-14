@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud-message/cloud-feign-message/cloud-feign-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-message/cloud-feign-message/cloud-feign-message.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud-message/cloud-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-message/cloud-message.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud-message/cloud-service-message/cloud-service-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-message/cloud-service-message/cloud-service-message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons/comm-core/comm-core.iml" filepath="$PROJECT_DIR$/commons/comm-core/comm-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/commons/comm-dto/comm-dto.iml" filepath="$PROJECT_DIR$/commons/comm-dto/comm-dto.iml" />
       <module fileurl="file://$PROJECT_DIR$/commons/comm-provider/comm-provider.iml" filepath="$PROJECT_DIR$/commons/comm-provider/comm-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/commons/comm-utils/comm-utils.iml" filepath="$PROJECT_DIR$/commons/comm-utils/comm-utils.iml" />

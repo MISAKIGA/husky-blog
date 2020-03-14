@@ -26,6 +26,7 @@ import java.util.Map;
  * @author MISAKIGA
  * @date 2020-3-2
  */
+@Component
 public class IntegrationAuthenticationFilter extends GenericFilterBean implements ApplicationContextAware {
     //ApplicationContextAware 实现该接口后 ，这个类就获得了ApplicationContext中的所有Bean
     //GenericFilter 是一个过滤器 详情：https://my.oschina.net/u/2819035/blog/736658

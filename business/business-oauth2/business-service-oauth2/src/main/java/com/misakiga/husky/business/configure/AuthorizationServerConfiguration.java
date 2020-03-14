@@ -1,5 +1,7 @@
 package com.misakiga.husky.business.configure;
 
+import com.misakiga.husky.business.integration.IntegrationAuthenticationFilter;
+import com.misakiga.husky.business.service.IntegrationUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -42,6 +44,13 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     @Autowired
     private RedisConnectionFactory redisConnectionFactory;
 
+    //集成登陆
+    @Autowired
+    private IntegrationUserDetailsService integrationUserDetailsService;
+
+    @Autowired
+    private IntegrationAuthenticationFilter integrationAuthenticationFilter;
+
     @Bean
     @Primary
     @ConfigurationProperties(prefix = "spring.datasource")
@@ -64,20 +73,27 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         return new JdbcClientDetailsService(dataSource());
     }
 
+    //modify
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints
                 // 用于支持密码模式
                 .authenticationManager(authenticationManager)
-                .tokenStore(tokenStore());
+                .tokenStore(tokenStore())
+                //集成登陆
+                .reuseRefreshTokens(false)
+                .userDetailsService(integrationUserDetailsService);
     }
 
+    //modify
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security
                 // 允许客户端访问 /oauth/check_token 检查 token
                 .checkTokenAccess("isAuthenticated()")
-                .allowFormAuthenticationForClients();
+                .allowFormAuthenticationForClients()
+                //过滤器
+                .addTokenEndpointAuthenticationFilter(integrationAuthenticationFilter);
     }
 
     /**

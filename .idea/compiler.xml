@@ -8,24 +8,25 @@
         <outputRelativeToContentRoot value="true" />
         <module name="cloud-api-message" />
         <module name="cloud-dto-message" />
-        <module name="provider-uc-service-login-log-admin" />
+        <module name="business-service-profile" />
         <module name="comm-provider" />
-        <module name="config-feign" />
         <module name="provider-uc-api-member" />
+        <module name="provider-uc-api-admin" />
         <module name="gateway" />
         <module name="comm-utils" />
         <module name="cloud-feign-message" />
         <module name="provider-uc-service-admin" />
-        <module name="provider-uc-api-admin" />
+        <module name="provider-uc-model" />
         <module name="config-sentinel" />
         <module name="cloud-service-message" />
         <module name="message-uc-login-log-admin" />
+        <module name="config-feign" />
         <module name="provider-uc-service-member" />
-        <module name="business-service-profile" />
         <module name="business-client-profile" />
+        <module name="comm-core" />
+        <module name="provider-uc-service-login-log-admin" />
         <module name="business-client-oauth2" />
         <module name="comm-dto" />
-        <module name="provider-uc-model" />
         <module name="provider-uc-api-login-log-admin" />
         <module name="business-service-oauth2" />
       </profile>
@@ -44,6 +45,7 @@
       <module name="cloud-feign-message" target="1.8" />
       <module name="cloud-message" target="1.8" />
       <module name="cloud-service-message" target="1.8" />
+      <module name="comm-core" target="1.8" />
       <module name="comm-dto" target="1.8" />
       <module name="comm-provider" target="1.8" />
       <module name="comm-service" target="1.8" />
@@ -97,6 +99,7 @@
       <module name="cloud-dto-message" options="-parameters" />
       <module name="cloud-feign-message" options="-parameters" />
       <module name="cloud-service-message" options="-parameters" />
+      <module name="comm-core" options="-parameters" />
       <module name="comm-dto" options="-parameters" />
       <module name="comm-provider" options="-parameters" />
       <module name="comm-service" options="-parameters" />
