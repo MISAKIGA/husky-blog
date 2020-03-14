@@ -4,9 +4,12 @@ import java.util.Date;
 import com.misakiga.husky.provider.ProviderAdminBootstrap;
 import com.misakiga.husky.provider.api.UmsAdminService;
 import com.misakiga.husky.provider.api.UmsPermissionService;
+import com.misakiga.husky.provider.api.UmsRoleService;
 import com.misakiga.husky.provider.domain.UmsAdmin;
 import com.misakiga.husky.provider.domain.UmsPermission;
+import com.misakiga.husky.provider.domain.UmsRole;
 import com.misakiga.husky.provider.mapper.UmsAdminMapper;
+import com.misakiga.husky.provider.mapper.UmsRoleMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +34,8 @@ public class UmsTests {
     @Resource
     private UmsPermissionService permissionService;
 
+    @Resource
+    private UmsRoleService umsRoleService;
     @Test
     public void testSelectAllPermission(){
         List<UmsPermission> umsPermissions = permissionService.selectPermissionByRoleId(1L);
@@ -39,14 +44,6 @@ public class UmsTests {
         });
     }
 
-    public <T> void test(){
-        Iterable<T> iterable = () -> {
-
-
-
-            return null;
-        };
-    }
 
     @Test
     public void testSelectAll(){
@@ -54,6 +51,22 @@ public class UmsTests {
         List<UmsAdmin> umsAdmins = umsAdminMapper.selectAll();
         umsAdmins.forEach(umsAdmin -> {
             System.out.println(umsAdmin);
+        });
+    }
+
+    @Test
+    public void tesSelectRole(){
+        List<UmsRole> umsRoles = umsRoleService.getRolesByUserId(1L);
+        umsRoles.forEach(umsRole -> {
+            System.out.println(umsRole);
+        });
+    }
+
+    @Test
+    public void testQueryAllPermission(){
+        List<UmsPermission> umsPermissions = permissionService.selectAllPermissionByUserId(3L);
+        umsPermissions.forEach(umsPermission -> {
+            System.out.println(umsPermission);
         });
     }
 

@@ -22,4 +22,9 @@ public class UmsPermissionServiceImpl implements UmsPermissionService{
 
         return umsPermissionMapper.selectPermissionByRoleId(id);
     }
+
+    @Override
+    public List<UmsPermission> selectAllPermissionByUserId(Long id) {
+        return umsPermissionMapper.selectAllPermissionByUserId(id);
+    }
 }
