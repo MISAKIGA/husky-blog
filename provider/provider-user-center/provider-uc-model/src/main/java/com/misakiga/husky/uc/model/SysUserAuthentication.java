@@ -3,6 +3,7 @@ package com.misakiga.husky.uc.model;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 认证主体
@@ -14,18 +15,40 @@ public class SysUserAuthentication implements Serializable {
     private static final long serialVersionUID = 3081524808793943440L;
 
     private Long id;
-
     private String username;
 
-    private String password;
+    /**
+     * 头像
+     */
+    private String icon;
 
+    /**
+     * 邮箱
+     */
     private String email;
 
-    private String phoneNumber;
+    /**
+     * 昵称
+     */
+    private String nickName;
 
-    private String status;
+    /**
+     * 备注信息
+     */
+    private String note;
 
-    private String name;
+    /**
+     * 创建时间
+     */
+    private Date createTime;
 
-    private String type;
+    /**
+     * 最后登录时间
+     */
+    private Date loginTime;
+
+    /**
+     * 帐号启用状态：0->禁用；1->启用
+     */
+    private Integer status;
 }

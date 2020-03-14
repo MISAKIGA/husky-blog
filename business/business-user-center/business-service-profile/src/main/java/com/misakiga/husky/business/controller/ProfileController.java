@@ -10,6 +10,7 @@ import com.misakiga.husky.business.dto.params.ProfileParam;
 import com.misakiga.husky.commons.dto.ResponseResult;
 import com.misakiga.husky.provider.api.UmsAdminService;
 import com.misakiga.husky.provider.domain.UmsAdmin;
+import com.misakiga.husky.uc.model.SysUserAuthentication;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.BeanUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -36,6 +37,14 @@ public class ProfileController {
     @Resource
     private BCryptPasswordEncoder passwordEncoder;
 
+    @GetMapping("/queryInfo/{username}")
+    public ResponseResult<SysUserAuthentication> findUserByUsername(@PathVariable("username") String username){
+        UmsAdmin umsAdmin = umsAdminService.get(username);
+        SysUserAuthentication userAuthentication = new SysUserAuthentication();
+        BeanUtils.copyProperties(umsAdmin,userAuthentication);
+
+        return new ResponseResult<SysUserAuthentication>(BusinessStatus.OK.getCode(),"查询用户信息",userAuthentication);
+    }
 
     @GetMapping(value = "/info/{username}")
     @SentinelResource(value = "info", fallback = "infoFallback", fallbackClass = ProfileControllerFallback.class)

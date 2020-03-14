@@ -19,6 +19,19 @@ public class ProfileFeignFallback implements ProfileFeign {
     public static final String BREAKING_MESSAGE = "您的网络有问题，请检查";
 
     @Override
+    public String findUserByUsername(String username) {
+        UmsAdminDTO dto = new UmsAdminDTO();
+        dto.setEmail("service@funtl.com");
+
+        try {
+            return MapperUtils.obj2json(new ResponseResult<UmsAdminDTO>(BusinessStatus.BREAKING.getCode(), BREAKING_MESSAGE));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
     public String info(String username) {
         UmsAdminDTO dto = new UmsAdminDTO();
         dto.setEmail("service@funtl.com");
