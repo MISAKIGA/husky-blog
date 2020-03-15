@@ -5,31 +5,57 @@ import org.springframework.security.core.CredentialsContainer;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.util.Assert;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
-public class User implements UserDetails, CredentialsContainer {
+/**
+ * @author MISAKIGA
+ */
+public class User implements UserDetails, CredentialsContainer,Serializable {
+
+    private static final long serialVersionUID = 7342716559439193567L;
     private Long id;
     private String username;
     private String password;
-    private String status;
+    private Integer status;
     private String type;
     private String phoneNumber;
     private String email;
     private String name;
     private Collection<String> resources = new ArrayList<>();
     private Collection<String> roles = new ArrayList<>();
-    private Collection<GrantedAuthority> grantedAuthorities;
+    private Set<GrantedAuthority> authorities;
     private Long tenantId;
+
+
+    public User(String username, String password, Collection<? extends GrantedAuthority> authorities) {
+        if (username != null && !"".equals(username) && password != null) {
+            this.username = username;
+            this.password = password;
+            this.status = CommonConstant.USER_STATUS_ENABLED;
+            this.authorities = Collections.unmodifiableSet(sortAuthorities(authorities));
+        } else {
+            throw new IllegalArgumentException("Cannot pass null or empty values to constructor");
+        }
+    }
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if (grantedAuthorities == null) {
-            this.grantedAuthorities = this.getRoles().stream().map(role -> new SimpleGrantedAuthority(role)).collect(Collectors.toList());
+        if (authorities == null) {
+            this.authorities = this.getRoles().stream().map(role -> new SimpleGrantedAuthority(role)).collect(Collectors.toSet());
         }
-        return grantedAuthorities;
+        return authorities;
     }
 
     @Override
@@ -70,11 +96,11 @@ public class User implements UserDetails, CredentialsContainer {
         this.password = password;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -145,5 +171,53 @@ public class User implements UserDetails, CredentialsContainer {
     @Override
     public void eraseCredentials() {
         this.password = null;
+    }
+
+    private static SortedSet<GrantedAuthority> sortAuthorities(Collection<? extends GrantedAuthority> authorities) {
+        Assert.notNull(authorities, "Cannot pass a null GrantedAuthority collection");
+        SortedSet<GrantedAuthority> sortedAuthorities = new TreeSet(new User.AuthorityComparator());
+        Iterator var2 = authorities.iterator();
+
+        while(var2.hasNext()) {
+            GrantedAuthority grantedAuthority = (GrantedAuthority)var2.next();
+            Assert.notNull(grantedAuthority, "GrantedAuthority list cannot contain any null elements");
+            sortedAuthorities.add(grantedAuthority);
+        }
+
+        return sortedAuthorities;
+    }
+
+    private static class AuthorityComparator implements Comparator<GrantedAuthority>, Serializable {
+        private static final long serialVersionUID = 520L;
+
+        private AuthorityComparator() {
+        }
+
+        @Override
+        public int compare(GrantedAuthority g1, GrantedAuthority g2) {
+            if (g2.getAuthority() == null) {
+                return -1;
+            } else {
+                return g1.getAuthority() == null ? 1 : g1.getAuthority().compareTo(g2.getAuthority());
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", status='" + status + '\'' +
+                ", type='" + type + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", resources=" + resources +
+                ", roles=" + roles +
+                ", grantedAuthorities=" + authorities +
+                ", tenantId=" + tenantId +
+                '}';
     }
 }

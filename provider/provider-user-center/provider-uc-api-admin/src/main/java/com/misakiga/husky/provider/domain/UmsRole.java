@@ -3,6 +3,8 @@ package com.misakiga.husky.provider.domain;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 @Data
@@ -37,6 +39,7 @@ public class UmsRole implements Serializable {
     /**
      * 创建时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(name = "create_time")
     private Date createTime;
 

@@ -26,7 +26,7 @@ public class ProfileResourceServerConfiguration extends ResourceServerConfigurer
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/**").hasAnyAuthority("USER");
+                .antMatchers("/**").permitAll();
     }
 
     @Override

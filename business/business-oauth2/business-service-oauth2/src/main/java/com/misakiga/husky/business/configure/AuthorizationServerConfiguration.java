@@ -59,6 +59,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         return DataSourceBuilder.create().build();
     }
 
+
     @Bean
     public TokenStore tokenStore() {
         // 基于 JDBC 实现，令牌保存到数据库
@@ -79,10 +80,9 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         endpoints
                 // 用于支持密码模式
                 .authenticationManager(authenticationManager)
-                .tokenStore(tokenStore())
+                .tokenStore(tokenStore());
                 //集成登陆
-                .reuseRefreshTokens(false)
-                .userDetailsService(integrationUserDetailsService);
+                //.reuseRefreshTokens(false);
     }
 
     //modify
@@ -90,7 +90,10 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security
                 // 允许客户端访问 /oauth/check_token 检查 token
+               // .checkTokenAccess("isAuthenticated()")
+                //.tokenKeyAccess("isAuthenticated()")
                 .checkTokenAccess("isAuthenticated()")
+                //
                 .allowFormAuthenticationForClients()
                 //过滤器
                 .addTokenEndpointAuthenticationFilter(integrationAuthenticationFilter);

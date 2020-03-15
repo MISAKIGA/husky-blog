@@ -12,6 +12,7 @@ import com.misakiga.husky.uc.model.Authorize;
 import com.misakiga.husky.uc.model.SysUserAuthentication;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,6 +21,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -36,9 +38,14 @@ public class IntegrationUserDetailsService implements UserDetailsService {
     @Resource
     private SysAuthorizeClient sysAuthorizeClient;
 
+    @Autowired(required = false)
+    public void setIntegrationAuthenticators(List<IntegrationAuthenticator> integrationAuthenticators){
+        this.authenticators = integrationAuthenticators;
+    }
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        /*//给每位用户授予权限
+        //给每位用户授予权限
         List<GrantedAuthority> grantedAuthorities = Lists.newArrayList();
         GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("USER");
         grantedAuthorities.add(grantedAuthority);
@@ -47,14 +54,17 @@ public class IntegrationUserDetailsService implements UserDetailsService {
 
         //账号存在
         if(umsAdmin != null){
-            return new User(umsAdmin.getUsername(),umsAdmin.getPassword(),grantedAuthorities);
+
+            User user = new User(umsAdmin.getUsername(),umsAdmin.getPassword(),grantedAuthorities);
+
+            return user;
         }
 
         else {
             return null;
-        }*/
+        }
 
-        IntegrationAuthentication integrationAuthentication = IntegrationAuthenticationContext.get();
+        /*IntegrationAuthentication integrationAuthentication = IntegrationAuthenticationContext.get();
 
         //判断是否是集成登陆
         if(integrationAuthentication == null){
@@ -67,22 +77,25 @@ public class IntegrationUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("用户名或密码错误");
         }
 
+
         User user = new User();
         BeanUtils.copyProperties(sysUserAuthentication, user);
         this.setAuthorize(user);
-        return user;
+        return user;*/
 
     }
 
     /**
      * 设置授权信息
-     * @param user
+     * @param
      */
-    public void setAuthorize(User user){
+/*    public void setAuthorize(User user){
         Authorize authorize = this.sysAuthorizeClient.get(user.getId());
-        user.setRoles(authorize.getRoles());
+        Collection<String> roles = authorize.getRoles();
+        roles.add("USER");
+        user.setRoles(roles);
         user.setResources(authorize.getResources());
-    }
+    }*/
 
     private SysUserAuthentication authenticate(IntegrationAuthentication integrationAuthentication) {
         if (this.authenticators != null) {

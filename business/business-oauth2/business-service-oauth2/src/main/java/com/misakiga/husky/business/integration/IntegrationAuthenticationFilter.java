@@ -60,6 +60,7 @@ public class IntegrationAuthenticationFilter extends GenericFilterBean implement
             integrationAuthentication.setAuthType(request.getParameter(AUTH_TYPE_PARM_NAME));
             integrationAuthentication.setAuthParameters(request.getParameterMap());
             IntegrationAuthenticationContext.set(integrationAuthentication);
+
             try{
                 //预处理
                 this.prepare(integrationAuthentication);
@@ -87,6 +88,7 @@ public class IntegrationAuthenticationFilter extends GenericFilterBean implement
         //延迟加载认证器
         if(this.authenticators == null){
             synchronized (this){
+                //获取认证器，UsernamePasswordAuthenticator等认证器
                 Map<String,IntegrationAuthenticator> integrationAuthenticatorMap = applicationContext.getBeansOfType(IntegrationAuthenticator.class);
                 if(integrationAuthenticatorMap != null){
                     this.authenticators = integrationAuthenticatorMap.values();
@@ -98,6 +100,7 @@ public class IntegrationAuthenticationFilter extends GenericFilterBean implement
             this.authenticators = new ArrayList<>();
         }
 
+        //判断是否支持认证器，如果支持，则使用该认证器进行验证
         for (IntegrationAuthenticator authenticator: authenticators) {
             if(authenticator.support(integrationAuthentication)){
                 authenticator.prepare(integrationAuthentication);

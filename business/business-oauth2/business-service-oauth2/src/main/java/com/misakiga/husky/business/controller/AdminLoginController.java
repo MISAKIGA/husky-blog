@@ -6,6 +6,7 @@ import com.misakiga.husky.business.BusinessStatus;
 import com.misakiga.husky.business.dto.LoginInfo;
 import com.misakiga.husky.business.dto.LoginParam;
 import com.misakiga.husky.business.feign.ProfileFeign;
+import com.misakiga.husky.business.feign.SysAuthorizeClient;
 import com.misakiga.husky.cloud.api.MessageService;
 import com.misakiga.husky.cloud.dto.UmsAdminLoginLogDTO;
 import com.misakiga.husky.commons.dto.ResponseResult;
@@ -14,6 +15,7 @@ import com.misakiga.husky.commons.utils.OkHttpClientUtil;
 import com.misakiga.husky.commons.utils.UserAgentUtils;
 import com.misakiga.husky.provider.api.UmsAdminService;
 import com.misakiga.husky.provider.domain.UmsAdmin;
+import com.misakiga.husky.uc.model.SysUserAuthentication;
 import okhttp3.Response;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Value;
@@ -67,11 +69,29 @@ public class AdminLoginController {
     @Resource
     private ProfileFeign profileFeign;
 
+    @Resource
+    private SysAuthorizeClient sysAuthorizeClient;
+
     @Reference(version = "1.0.0")
     private UmsAdminService umsAdminService;
 
     @Reference(version = "1.0.0")
     private MessageService messageService;
+
+    @GetMapping(value = "/user/gettest")
+    public ResponseResult gettest(){
+
+        String jsonString = profileFeign.findUserByUsername("admin");
+        try {
+            SysUserAuthentication sysUserAuthentication = MapperUtils.json2pojoByTree(jsonString,"data",SysUserAuthentication.class);
+            return new ResponseResult<>(BusinessStatus.OK.getCode(),"access",sysUserAuthentication);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return new ResponseResult<>(BusinessStatus.FAIL.getCode(),"Fail!",jsonString);
+
+    }
 
     @PostMapping(value = "/user/login")
     public ResponseResult<Map<String,Object>> login(@RequestBody LoginParam loginParam, HttpServletRequest request){
