@@ -46,9 +46,6 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 
     //集成登陆
     @Autowired
-    private IntegrationUserDetailsService integrationUserDetailsService;
-
-    @Autowired
     private IntegrationAuthenticationFilter integrationAuthenticationFilter;
 
     @Bean

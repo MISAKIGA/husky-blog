@@ -38,6 +38,8 @@ public class User implements UserDetails, CredentialsContainer,Serializable {
     private Long tenantId;
 
 
+    public User(){}
+
     public User(String username, String password, Collection<? extends GrantedAuthority> authorities) {
         if (username != null && !"".equals(username) && password != null) {
             this.username = username;

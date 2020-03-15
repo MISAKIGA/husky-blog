@@ -53,7 +53,7 @@ public class IntegrationUserDetailsService implements UserDetailsService {
         UmsAdmin umsAdmin = umsAdminService.get(username);
 
         //账号存在
-        if(umsAdmin != null){
+/*        if(umsAdmin != null){
 
             User user = new User(umsAdmin.getUsername(),umsAdmin.getPassword(),grantedAuthorities);
 
@@ -62,40 +62,40 @@ public class IntegrationUserDetailsService implements UserDetailsService {
 
         else {
             return null;
-        }
-
-        /*IntegrationAuthentication integrationAuthentication = IntegrationAuthenticationContext.get();
+        }*/
+        IntegrationAuthentication integrationAuthentication = IntegrationAuthenticationContext.get();
 
         //判断是否是集成登陆
         if(integrationAuthentication == null){
             integrationAuthentication = new IntegrationAuthentication();
         }
         integrationAuthentication.setUsername(username);
+
         SysUserAuthentication sysUserAuthentication = this.authenticate(integrationAuthentication);
 
-        if(sysUserAuthentication == null){
-            throw new UsernameNotFoundException("用户名或密码错误");
-        }
-
-
         User user = new User();
-        BeanUtils.copyProperties(sysUserAuthentication, user);
-        this.setAuthorize(user);
-        return user;*/
 
+        //TODO: 这里sysUserAuthentication没有获取到密码
+        assert sysUserAuthentication != null;
+        BeanUtils.copyProperties(sysUserAuthentication,user);
+
+        System.err.println(user);
+        this.setAuthorize(user);
+
+        return user;
     }
 
     /**
      * 设置授权信息
      * @param
      */
-/*    public void setAuthorize(User user){
+    public void setAuthorize(User user){
         Authorize authorize = this.sysAuthorizeClient.get(user.getId());
         Collection<String> roles = authorize.getRoles();
         roles.add("USER");
         user.setRoles(roles);
         user.setResources(authorize.getResources());
-    }*/
+    }
 
     private SysUserAuthentication authenticate(IntegrationAuthentication integrationAuthentication) {
         if (this.authenticators != null) {

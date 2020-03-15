@@ -27,7 +27,7 @@ public class UsernamePasswordAuthenticator extends AbstractPreparableIntegration
     public SysUserAuthentication authenticate(IntegrationAuthentication integrationAuthentication) {
 
         String jsonString = profileFeign.findUserByUsername(integrationAuthentication.getUsername());
-
+        System.err.println("json:"+jsonString);
         try {
             SysUserAuthentication sysUserAuthentication = MapperUtils.json2pojoByTree(jsonString,"data",SysUserAuthentication.class);
             return sysUserAuthentication;
@@ -45,7 +45,7 @@ public class UsernamePasswordAuthenticator extends AbstractPreparableIntegration
 
     @Override
     public boolean support(IntegrationAuthentication integrationAuthentication) {
-        return StringUtils.isEmpty(integrationAuthentication.getAuthType());
+        return "password".equals(integrationAuthentication.getAuthType());
     }
 
 }
