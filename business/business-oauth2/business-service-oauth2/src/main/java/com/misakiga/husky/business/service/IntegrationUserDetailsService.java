@@ -57,6 +57,7 @@ public class IntegrationUserDetailsService implements UserDetailsService {
 
         assert sysUserAuthentication != null;
         BeanUtils.copyProperties(sysUserAuthentication,user);
+
         this.setAuthorize(user);
 
         System.err.println(user);
@@ -68,11 +69,13 @@ public class IntegrationUserDetailsService implements UserDetailsService {
      * @param
      */
     public void setAuthorize(User user){
+
         Authorize authorize = this.sysAuthorizeClient.get(user.getId());
         Collection<String> roles = authorize.getRoles();
         roles.add("USER");
         user.setRoles(roles);
         user.setResources(authorize.getResources());
+        user.getAuthorities();
     }
 
     private SysUserAuthentication authenticate(IntegrationAuthentication integrationAuthentication) {

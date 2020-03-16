@@ -14,7 +14,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
  */
 @SpringBootApplication(scanBasePackageClasses = {OAuthBootstrap.class},scanBasePackages = "com.misakiga.husky.cloud.feign")
 @EnableDiscoveryClient
-@EnableOAuth2Client
 @EnableCaching
 @EnableResourceServer
 @EnableFeignClients

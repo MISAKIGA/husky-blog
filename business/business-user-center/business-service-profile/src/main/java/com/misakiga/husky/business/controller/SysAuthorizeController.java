@@ -4,6 +4,7 @@ import com.misakiga.husky.provider.api.SysAuthorizeService;
 import com.misakiga.husky.uc.model.Authorize;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,8 +20,8 @@ public class SysAuthorizeController {
     @Reference(version = "1.0.0")
     private SysAuthorizeService authorizeService;
 
-    @GetMapping("/get")
-    public Authorize get(Long userId){
+    @GetMapping("/get/{userid}")
+    public Authorize get(@PathVariable("userid") Long userId){
         return this.authorizeService.getAuthorize(userId);
     }
 }

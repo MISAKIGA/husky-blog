@@ -1,5 +1,6 @@
 package com.misakiga.husky.provider.service;
 
+import com.misakiga.husky.comm.core.CommonConstant;
 import com.misakiga.husky.commons.utils.MapperUtils;
 import com.misakiga.husky.provider.api.SysAuthorizeService;
 import com.misakiga.husky.provider.api.UmsPermissionService;
@@ -37,26 +38,32 @@ public class SysAuthorizeServiceImpl implements SysAuthorizeService {
     @Override
     public Authorize getAuthorize(Long userId) {
         Authorize authorize = new Authorize();
+
         try {
+            System.out.println("userid:::"+userId);
             List<UmsRole> umsRoles = umsRoleService.getRolesByUserId(userId);
             List<UmsPermission> umsPermissions = umsPermissionService.selectAllPermissionByUserId(userId);
             Collection<String> roles = new ArrayList<>();
             Collection<String> resources = new ArrayList<>();
-
+            System.out.println(umsRoles ==null);
             umsRoles.forEach(umsRole -> {
-                roles.add(umsRole.getName());
+                if (umsRole.getStatus().equals(CommonConstant.STATUS_ENABLED)){
+                    roles.add(umsRole.getName());
+                }
             });
+
             umsPermissions.forEach(umsPermission -> {
-                resources.add(umsPermission.getUri());
+                if (umsPermission.getStatus().equals(CommonConstant.STATUS_ENABLED)){
+                    resources.add(umsPermission.getUri());
+                }
             });
 
             authorize.setRoles(roles);
             authorize.setResources(resources);
 
+            System.out.println("roles :" + roles + "::::::" + resources);
             return authorize;
-        }catch (Exception e){
-
-        }
+        }catch (Exception ignored){}
 
         return null;
     }

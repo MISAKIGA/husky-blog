@@ -55,6 +55,13 @@ public class CommonConstant {
     public static final Integer USER_STATUS_DISABLED = 0;
     public static final Integer USER_STATUS_LOCKED = -1;
 
+    /**
+     * 功能状态，1：正常，0：禁用，-1锁定
+     */
+    public static final Integer STATUS_ENABLED = 1;
+    public static final Integer STATUS_DISABLED = 0;
+    public static final Integer STATUS_LOCKED = -1;
+
     public static final Integer TENANT_STATUS_ENABLED = 1;
     public static final Integer TENANT_STATUS_DISABLE = 0;
 }

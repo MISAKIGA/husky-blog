@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 public class TokenRevokeEndpoint {
 
-    @Autowired
+/*    @Autowired
     @Qualifier("consumerTokenServices")
     private ConsumerTokenServices consumerTokenServices;
 
@@ -25,6 +25,6 @@ public class TokenRevokeEndpoint {
         System.out.println("acc++++++"+accessToken);
         consumerTokenServices.revokeToken(accessToken);
         return new ResponseResult<>(BusinessStatus.OK.getCode(),"用户注销",null);
-    }
+    }*/
 
 }

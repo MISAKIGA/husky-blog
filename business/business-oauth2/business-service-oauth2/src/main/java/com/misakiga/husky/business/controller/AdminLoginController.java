@@ -26,6 +26,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -113,22 +114,29 @@ public class AdminLoginController {
         params.put("client_secret",oauth2ClientSecret);
         params.put("auth_type",authType);
 
+        String jsonString = null;
+
         try {
             //解析响应结果封装并返回
             Response response = OkHttpClientUtil.getInstance().postData(URL_OAUTH_TOKEN, params);
+            System.out.println("-------");
+            params.values().forEach(System.out::println);
 
-            String jsonString = Objects.requireNonNull(response.body()).string();
+            jsonString = Objects.requireNonNull(response.body()).string();
             Map<String,Object> jsonMap = MapperUtils.json2map(jsonString);
             String token = String.valueOf(jsonMap.get("access_token"));
+            String error = String.valueOf(jsonMap.get("error"));
 
-            if(response == null || token == null){
+            if(!StringUtils.isEmpty(error) && "null".equals(token)){
+
+                result.put("error",jsonString);
                 throw new BusinessException(BusinessStatus.ADMIN_PASSWORD);
             }
 
             result.put("token",token);
-
         } catch (Exception e) {
             e.printStackTrace();
+            return new ResponseResult<Map<String,Object>>(BusinessStatus.FAIL.getCode(), "登录失败",result);
         }
 
         //发送管理员登录日志

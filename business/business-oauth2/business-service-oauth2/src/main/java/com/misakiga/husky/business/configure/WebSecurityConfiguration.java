@@ -60,7 +60,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
+        http
                 .exceptionHandling()
                 .and()
                 //STATELESS ： 无状态，不允许往session
@@ -74,9 +74,6 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/info").hasAnyAuthority("USER")
                 .antMatchers("/user/logout").hasAnyAuthority("USER")
                 .antMatchers("/api/*").hasAnyAuthority("USER");
-               // .antMatchers("/oauth/token").hasAnyAuthority("USER")
-              //  .and().logout().permitAll()
-               // .and().formLogin().permitAll();
     }
 
 }

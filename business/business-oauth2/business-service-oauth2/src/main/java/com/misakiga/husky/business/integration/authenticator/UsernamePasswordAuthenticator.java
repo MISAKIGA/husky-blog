@@ -27,7 +27,6 @@ public class UsernamePasswordAuthenticator extends AbstractPreparableIntegration
     public SysUserAuthentication authenticate(IntegrationAuthentication integrationAuthentication) {
 
         String jsonString = profileFeign.findUserByUsername(integrationAuthentication.getUsername());
-        System.err.println("json:"+jsonString);
         try {
             return MapperUtils.json2pojoByTree(jsonString,"data",SysUserAuthentication.class);
         }catch (Exception ignored){}
