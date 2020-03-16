@@ -30,9 +30,6 @@ import java.util.List;
 @Component
 public class IntegrationUserDetailsService implements UserDetailsService {
 
-    @Reference(version = "1.0.0")
-    private UmsAdminService umsAdminService;
-
     private List<IntegrationAuthenticator> authenticators;
 
     @Resource
@@ -45,24 +42,7 @@ public class IntegrationUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        //给每位用户授予权限
-        List<GrantedAuthority> grantedAuthorities = Lists.newArrayList();
-        GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("USER");
-        grantedAuthorities.add(grantedAuthority);
 
-        UmsAdmin umsAdmin = umsAdminService.get(username);
-
-        //账号存在
-/*        if(umsAdmin != null){
-
-            User user = new User(umsAdmin.getUsername(),umsAdmin.getPassword(),grantedAuthorities);
-
-            return user;
-        }
-
-        else {
-            return null;
-        }*/
         IntegrationAuthentication integrationAuthentication = IntegrationAuthenticationContext.get();
 
         //判断是否是集成登陆
@@ -75,13 +55,11 @@ public class IntegrationUserDetailsService implements UserDetailsService {
 
         User user = new User();
 
-        //TODO: 这里sysUserAuthentication没有获取到密码
         assert sysUserAuthentication != null;
         BeanUtils.copyProperties(sysUserAuthentication,user);
-
-        System.err.println(user);
         this.setAuthorize(user);
 
+        System.err.println(user);
         return user;
     }
 
@@ -98,6 +76,7 @@ public class IntegrationUserDetailsService implements UserDetailsService {
     }
 
     private SysUserAuthentication authenticate(IntegrationAuthentication integrationAuthentication) {
+
         if (this.authenticators != null) {
             for (IntegrationAuthenticator authenticator : authenticators) {
                 if (authenticator.support(integrationAuthentication)) {

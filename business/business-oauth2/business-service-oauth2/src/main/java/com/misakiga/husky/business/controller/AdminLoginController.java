@@ -60,6 +60,8 @@ public class AdminLoginController {
     @Resource(name = "userDetailsServiceBean")
     public UserDetailsService userDetailsService;
 
+    public final String authType = "password";
+
     @Resource
     public BCryptPasswordEncoder passwordEncoder;
 
@@ -100,12 +102,7 @@ public class AdminLoginController {
         Map<String,Object> result = Maps.newHashMap();
 
         //验证账号密码
-        UserDetails userDetails = userDetailsService.loadUserByUsername(loginParam.getUsername());
-
-        if(userDetails == null || !passwordEncoder.matches(loginParam.getPassword(),userDetails.getPassword())){
-            throw new BusinessException(BusinessStatus.ADMIN_PASSWORD);
-        }
-
+       // UserDetails userDetails = userDetailsService.loadUserByUsername(loginParam.getUsername());
 
         //通过HTTP客户端请求登录接口
         Map<String,String> params = Maps.newHashMap();
@@ -114,6 +111,7 @@ public class AdminLoginController {
         params.put("grant_type",oauth2GrantType);
         params.put("client_id",oauth2ClientId);
         params.put("client_secret",oauth2ClientSecret);
+        params.put("auth_type",authType);
 
         try {
             //解析响应结果封装并返回
@@ -122,6 +120,11 @@ public class AdminLoginController {
             String jsonString = Objects.requireNonNull(response.body()).string();
             Map<String,Object> jsonMap = MapperUtils.json2map(jsonString);
             String token = String.valueOf(jsonMap.get("access_token"));
+
+            if(response == null || token == null){
+                throw new BusinessException(BusinessStatus.ADMIN_PASSWORD);
+            }
+
             result.put("token",token);
 
         } catch (Exception e) {
@@ -129,7 +132,7 @@ public class AdminLoginController {
         }
 
         //发送管理员登录日志
-        sendAdminLoginLog(userDetails.getUsername(),request);
+        //sendAdminLoginLog(loginParam.getUsername(),request);
         return new ResponseResult<Map<String,Object>>(BusinessStatus.OK.getCode(), "登录成功",result);
     }
 

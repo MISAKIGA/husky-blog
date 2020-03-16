@@ -190,7 +190,7 @@ public class User implements UserDetails, CredentialsContainer,Serializable {
     }
 
     private static class AuthorityComparator implements Comparator<GrantedAuthority>, Serializable {
-        private static final long serialVersionUID = 520L;
+        private static final long serialVersionUID = 668384296807044753L;
 
         private AuthorityComparator() {
         }

@@ -2,6 +2,7 @@ package com.misakiga.husky.uc.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import lombok.Getter;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -17,6 +18,8 @@ public class SysUserAuthentication implements Serializable {
 
     private Long id;
     private String username;
+
+    private String password;
 
     /**
      * 头像
@@ -54,4 +57,11 @@ public class SysUserAuthentication implements Serializable {
      * 帐号启用状态：0->禁用；1->启用
      */
     private Integer status;
+
+    /**
+     * 清空密码
+     */
+    public void eraseCredentials() {
+        this.password = null;
+    }
 }
