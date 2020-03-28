@@ -5,6 +5,7 @@ import com.misakiga.husky.business.OAuthBootstrap;
 import com.misakiga.husky.commons.utils.MapperUtils;
 import com.misakiga.husky.commons.utils.OkHttpClientUtil;
 import okhttp3.Response;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -16,6 +17,7 @@ import java.util.Objects;
 @SpringBootTest(classes = OAuthBootstrap.class)
 public class AdminLoginTest {
 
+    @Test
     public void getLoginUser(){
         //通过HTTP客户端请求登录接口
         Map<String,String> params = Maps.newHashMap();
@@ -25,7 +27,6 @@ public class AdminLoginTest {
         params.put("client_id","client");
         params.put("client_secret","secret");
         params.put("auth_type","password");
-
 
         try {
             //解析响应结果封装并返回

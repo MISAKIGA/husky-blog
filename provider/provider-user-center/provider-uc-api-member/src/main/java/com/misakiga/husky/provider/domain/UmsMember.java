@@ -1,5 +1,6 @@
 package com.misakiga.husky.provider.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -15,6 +16,9 @@ import java.util.Date;
 @Data
 @Table(name = "ums_member")
 public class UmsMember implements Serializable {
+
+    private static final long serialVersionUID = 2789583042888898001L;
+
     @Id
     @Column(name = "id")
     @GeneratedValue(generator = "JDBC")
@@ -57,6 +61,7 @@ public class UmsMember implements Serializable {
      * 注册时间
      */
     @Column(name = "create_time")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
 
     /**
@@ -75,6 +80,7 @@ public class UmsMember implements Serializable {
      * 生日
      */
     @Column(name = "birthday")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date birthday;
 
     /**
@@ -125,5 +131,4 @@ public class UmsMember implements Serializable {
     @Column(name = "history_integration")
     private Integer historyIntegration;
 
-    private static final long serialVersionUID = 1L;
 }

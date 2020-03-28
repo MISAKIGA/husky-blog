@@ -55,7 +55,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         //不拦截该请求路径 /user/login，予以通过
-        web.ignoring().antMatchers("/user/login").antMatchers("/user/gettest");
+        web.ignoring().antMatchers("/admin/login");
     }
 
     @Override
@@ -71,8 +71,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().authorizeRequests()
                 //增加了授权访问配置
-                .antMatchers("/user/info").hasAnyAuthority("USER")
-                .antMatchers("/user/logout").hasAnyAuthority("USER")
+                .antMatchers("/admin/info").hasAnyAuthority("USER")
+                .antMatchers("/admin/logout").hasAnyAuthority("USER")
                 .antMatchers("/api/*").hasAnyAuthority("USER");
     }
 

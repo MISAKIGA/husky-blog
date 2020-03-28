@@ -26,7 +26,6 @@
         <module name="comm-core" />
         <module name="provider-uc-service-login-log-admin" />
         <module name="business-client-oauth2" />
-        <module name="comm-dto" />
         <module name="provider-uc-api-login-log-admin" />
         <module name="business-service-oauth2" />
       </profile>
@@ -45,6 +44,9 @@
       <module name="cloud-feign-message" target="1.8" />
       <module name="cloud-message" target="1.8" />
       <module name="cloud-service-message" target="1.8" />
+      <module name="cloud-vcc" target="1.8" />
+      <module name="cloud-vcc-client" target="1.8" />
+      <module name="cloud-vcc-service" target="1.8" />
       <module name="comm-core" target="1.8" />
       <module name="comm-dto" target="1.8" />
       <module name="comm-provider" target="1.8" />

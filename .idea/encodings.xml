@@ -9,8 +9,10 @@
     <file url="file://$PROJECT_DIR$/cloud/cloud-message/cloud-dto-message/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud/cloud-message/cloud-feign-message/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud/cloud-message/cloud-service-message/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/cloud-vcc/cloud-vcc-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/cloud-vcc/cloud-vcc-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud/cloud-vcc/cloud-vcc-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/commons/comm-core/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/commons/comm-dto/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/commons/comm-provider/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/commons/comm-utils/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/configuration/config-feign/src/main/java" charset="UTF-8" />

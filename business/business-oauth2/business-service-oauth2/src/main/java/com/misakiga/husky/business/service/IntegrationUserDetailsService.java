@@ -18,6 +18,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -60,7 +61,6 @@ public class IntegrationUserDetailsService implements UserDetailsService {
 
         this.setAuthorize(user);
 
-        System.err.println(user);
         return user;
     }
 
@@ -87,6 +87,6 @@ public class IntegrationUserDetailsService implements UserDetailsService {
                 }
             }
         }
-        return null;
+        throw new OAuth2Exception("无效的auth_type");
     }
 }

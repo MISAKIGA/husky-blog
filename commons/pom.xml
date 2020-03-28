@@ -39,6 +39,5 @@
         <module>comm-core</module>
         <module>comm-provider</module>
         <module>comm-utils</module>
-        <module>comm-dto</module>
     </modules>
 </project>

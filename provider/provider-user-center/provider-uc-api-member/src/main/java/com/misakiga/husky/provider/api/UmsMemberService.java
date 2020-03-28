@@ -6,11 +6,7 @@ import com.misakiga.husky.uc.model.SysUserDTO;
 
 import java.util.List;
 
-/**
- * @author MISAKIGA
- */
-public interface UmsMemberService {
-
+public interface UmsMemberService{
 
     /**
      * 修改用户信息
@@ -101,5 +97,4 @@ public interface UmsMemberService {
      * @param sysUserDTO
      */
     void insert(SysUserDTO sysUserDTO);
-
 }

@@ -20,14 +20,9 @@
         </license>
     </licenses>
 
-
-
-
     <modules>
         <module>cloud-message</module>
+        <module>cloud-vcc</module>
     </modules>
-
-
-
 
 </project>

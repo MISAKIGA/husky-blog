@@ -9,19 +9,18 @@ import com.misakiga.husky.business.feign.ProfileFeign;
 import com.misakiga.husky.business.feign.SysAuthorizeClient;
 import com.misakiga.husky.cloud.api.MessageService;
 import com.misakiga.husky.cloud.dto.UmsAdminLoginLogDTO;
-import com.misakiga.husky.commons.dto.ResponseResult;
+import com.misakiga.husky.comm.base.BaseController;
+import com.misakiga.husky.comm.dto.ResponseResult;
 import com.misakiga.husky.commons.utils.MapperUtils;
 import com.misakiga.husky.commons.utils.OkHttpClientUtil;
 import com.misakiga.husky.commons.utils.UserAgentUtils;
 import com.misakiga.husky.provider.api.UmsAdminService;
 import com.misakiga.husky.provider.domain.UmsAdmin;
-import com.misakiga.husky.uc.model.SysUserAuthentication;
 import okhttp3.Response;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
@@ -31,6 +30,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -44,8 +44,9 @@ import java.util.Objects;
  * 管理员登录
  * @author MISAKIGA
  */
-@RestController(value = "admin")
-public class AdminLoginController {
+@RestController()
+@RequestMapping("admin")
+public class AdminLoginController extends BaseController {
 
     private static final String URL_OAUTH_TOKEN ="http://localhost:9001/oauth/token";
 
@@ -81,22 +82,7 @@ public class AdminLoginController {
     @Reference(version = "1.0.0")
     private MessageService messageService;
 
-    @GetMapping(value = "/user/gettest")
-    public ResponseResult gettest(){
-
-        String jsonString = profileFeign.findUserByUsername("admin");
-        try {
-            SysUserAuthentication sysUserAuthentication = MapperUtils.json2pojoByTree(jsonString,"data",SysUserAuthentication.class);
-            return new ResponseResult<>(BusinessStatus.OK.getCode(),"access",sysUserAuthentication);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        return new ResponseResult<>(BusinessStatus.FAIL.getCode(),"Fail!",jsonString);
-
-    }
-
-    @PostMapping(value = "/user/login")
+    @PostMapping(value = "/login")
     public ResponseResult<Map<String,Object>> login(@RequestBody LoginParam loginParam, HttpServletRequest request){
 
         //封装返回结果
@@ -119,12 +105,11 @@ public class AdminLoginController {
         try {
             //解析响应结果封装并返回
             Response response = OkHttpClientUtil.getInstance().postData(URL_OAUTH_TOKEN, params);
-            System.out.println("-------");
-            params.values().forEach(System.out::println);
 
             jsonString = Objects.requireNonNull(response.body()).string();
             Map<String,Object> jsonMap = MapperUtils.json2map(jsonString);
-            String token = String.valueOf(jsonMap.get("access_token"));
+            String token = String.valueOf(jsonMap.get("access_" +
+                    "token"));
             String error = String.valueOf(jsonMap.get("error"));
 
             if(!StringUtils.isEmpty(error) && "null".equals(token)){
@@ -136,15 +121,15 @@ public class AdminLoginController {
             result.put("token",token);
         } catch (Exception e) {
             e.printStackTrace();
-            return new ResponseResult<Map<String,Object>>(BusinessStatus.FAIL.getCode(), "登录失败",result);
+            return this.failure("登录失败",result);
         }
 
         //发送管理员登录日志
         //sendAdminLoginLog(loginParam.getUsername(),request);
-        return new ResponseResult<Map<String,Object>>(BusinessStatus.OK.getCode(), "登录成功",result);
+        return this.success("登录成功",result);
     }
 
-    @GetMapping(value = "/user/info")
+    @GetMapping(value = "/info")
     public ResponseResult<LoginInfo> info() throws Exception {
 
         //获取用户认证信息
@@ -164,16 +149,16 @@ public class AdminLoginController {
         loginInfo.setName(umsAdmin.getUsername());
         loginInfo.setAvatar(umsAdmin.getIcon());
 
-        return new ResponseResult<LoginInfo>(BusinessStatus.OK.getCode(), "获取用户信息",loginInfo);
+        return this.success("获取用户信息",loginInfo);
     }
 
 
-    @DeleteMapping(value = "/user/logout")
+    @DeleteMapping(value = "/logout")
     public ResponseResult<LoginInfo> logout(HttpServletRequest request){
         String token = request.getParameter("access_token");
         OAuth2AccessToken oAuth2AccessToken = tokenStore.readAccessToken(token);
         tokenStore.removeAccessToken(oAuth2AccessToken);
-        return new ResponseResult<LoginInfo>(BusinessStatus.OK.getCode(),"用户注销",null);
+        return this.success("用户注销");
     }
 
     private boolean sendAdminLoginLog(String username,HttpServletRequest request){

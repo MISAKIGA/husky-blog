@@ -40,12 +40,10 @@ public class SysAuthorizeServiceImpl implements SysAuthorizeService {
         Authorize authorize = new Authorize();
 
         try {
-            System.out.println("userid:::"+userId);
             List<UmsRole> umsRoles = umsRoleService.getRolesByUserId(userId);
             List<UmsPermission> umsPermissions = umsPermissionService.selectAllPermissionByUserId(userId);
             Collection<String> roles = new ArrayList<>();
             Collection<String> resources = new ArrayList<>();
-            System.out.println(umsRoles ==null);
             umsRoles.forEach(umsRole -> {
                 if (umsRole.getStatus().equals(CommonConstant.STATUS_ENABLED)){
                     roles.add(umsRole.getName());
@@ -61,7 +59,6 @@ public class SysAuthorizeServiceImpl implements SysAuthorizeService {
             authorize.setRoles(roles);
             authorize.setResources(resources);
 
-            System.out.println("roles :" + roles + "::::::" + resources);
             return authorize;
         }catch (Exception ignored){}
 

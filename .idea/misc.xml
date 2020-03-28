@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/cloud/cloud-dto-message/pom.xml" />
         <option value="$PROJECT_DIR$/cloud/cloud-feign-message/pom.xml" />
         <option value="$PROJECT_DIR$/cloud/cloud-service-message/pom.xml" />
+        <option value="$PROJECT_DIR$/commons/comm-dto/pom.xml" />
         <option value="$PROJECT_DIR$/commons/comm-service/pom.xml" />
         <option value="$PROJECT_DIR$/message/message-user-center/login-log-admin/pom.xml" />
         <option value="$PROJECT_DIR$/provider/provider-user-center/provider-api-admin/pom.xml" />

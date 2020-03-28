@@ -1,20 +1,23 @@
 package com.misakiga.husky.provider.service;
 
-import com.misakiga.husky.provider.api.UmsMemberService;;
 import com.misakiga.husky.provider.domain.UmsMember;
 import com.misakiga.husky.uc.model.SysUserAuthentication;
 import com.misakiga.husky.uc.model.SysUserDTO;
-import org.springframework.stereotype.Service;
+import org.apache.dubbo.config.annotation.Service;
+import org.springframework.beans.BeanUtils;
+
 import javax.annotation.Resource;
 import com.misakiga.husky.provider.mapper.UmsMemberMapper;
+import com.misakiga.husky.provider.api.UmsMemberService;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
 /**
  * @author MISAKIGA
  */
-@Service
-public class UmsMemberServiceImpl implements UmsMemberService {
+@Service(version = "1.0.0")
+public class UmsMemberServiceImpl implements UmsMemberService{
 
     @Resource
     private UmsMemberMapper umsMemberMapper;
@@ -71,7 +74,17 @@ public class UmsMemberServiceImpl implements UmsMemberService {
 
     @Override
     public SysUserAuthentication findUserByPhoneNumber(String phoneNumber) {
-        return null;
+
+        Example example = new Example(UmsMember.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("phone",phoneNumber);
+        UmsMember umsMember = this.umsMemberMapper.selectOneByExample(example);
+
+        SysUserAuthentication sysUserAuthentication = new SysUserAuthentication();
+
+        BeanUtils.copyProperties(umsMember,sysUserAuthentication);
+
+        return sysUserAuthentication;
     }
 
     @Override
@@ -83,5 +96,4 @@ public class UmsMemberServiceImpl implements UmsMemberService {
     public void insert(SysUserDTO sysUserDTO) {
 
     }
-
 }

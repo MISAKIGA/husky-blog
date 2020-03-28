@@ -10,8 +10,14 @@ import java.util.Map;
 @Data
 public class IntegrationAuthentication {
 
+    /*
+     * 请求登录认证类型
+     */
     private String authType;
     private String username;
+    /*
+     * 请求登录认证参数集合
+     */
     private Map<String,String[]> authParameters;
 
     public String getAuthParameter(String parameter){
