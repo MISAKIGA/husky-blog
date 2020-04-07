@@ -23,6 +23,6 @@
     <modules>
         <module>cloud-message</module>
         <module>cloud-vcc</module>
+        <module>cloud-notification</module>
     </modules>
-
 </project>

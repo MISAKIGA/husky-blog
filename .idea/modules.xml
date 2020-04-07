@@ -10,20 +10,27 @@
       <module fileurl="file://$PROJECT_DIR$/business/business-user-center/business-service-profile/business-service-profile.iml" filepath="$PROJECT_DIR$/business/business-user-center/business-service-profile/business-service-profile.iml" />
       <module fileurl="file://$PROJECT_DIR$/business/business-user-center/business-user-center.iml" filepath="$PROJECT_DIR$/business/business-user-center/business-user-center.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud.iml" filepath="$PROJECT_DIR$/cloud/cloud.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-message/cloud-api-message/cloud-api-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-message/cloud-api-message/cloud-api-message.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-message/cloud-dto-message/cloud-dto-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-message/cloud-dto-message/cloud-dto-message.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-message/cloud-feign-message/cloud-feign-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-message/cloud-feign-message/cloud-feign-message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-message/cloud-message-client/cloud-feign-message (1).iml" filepath="$PROJECT_DIR$/cloud/cloud-message/cloud-message-client/cloud-feign-message (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud-message/cloud-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-message/cloud-message.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-message/cloud-service-message/cloud-service-message.iml" filepath="$PROJECT_DIR$/cloud/cloud-message/cloud-service-message/cloud-service-message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-message/cloud-message-client/cloud-message-client.iml" filepath="$PROJECT_DIR$/cloud/cloud-message/cloud-message-client/cloud-message-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-message/cloud-message-service/cloud-message-service.iml" filepath="$PROJECT_DIR$/cloud/cloud-message/cloud-message-service/cloud-message-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-notification/cloud-notification.iml" filepath="$PROJECT_DIR$/cloud/cloud-notification/cloud-notification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-notification/Cloud-notification-api/cloud-notification-api.iml" filepath="$PROJECT_DIR$/cloud/cloud-notification/Cloud-notification-api/cloud-notification-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud/cloud-notification/cloud-notification-service/cloud-notification-service.iml" filepath="$PROJECT_DIR$/cloud/cloud-notification/cloud-notification-service/cloud-notification-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud-vcc/cloud-vcc.iml" filepath="$PROJECT_DIR$/cloud/cloud-vcc/cloud-vcc.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud-vcc/cloud-vcc-client/cloud-vcc-client.iml" filepath="$PROJECT_DIR$/cloud/cloud-vcc/cloud-vcc-client/cloud-vcc-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud/cloud-vcc/cloud-vcc-service/cloud-vcc-service.iml" filepath="$PROJECT_DIR$/cloud/cloud-vcc/cloud-vcc-service/cloud-vcc-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/commons/comm-core/comm-core.iml" filepath="$PROJECT_DIR$/commons/comm-core/comm-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/commons/comm-provider/comm-provider.iml" filepath="$PROJECT_DIR$/commons/comm-provider/comm-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons/comm-sender/comm-sender.iml" filepath="$PROJECT_DIR$/commons/comm-sender/comm-sender.iml" />
       <module fileurl="file://$PROJECT_DIR$/commons/comm-utils/comm-utils.iml" filepath="$PROJECT_DIR$/commons/comm-utils/comm-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/commons/commons.iml" filepath="$PROJECT_DIR$/commons/commons.iml" />
       <module fileurl="file://$PROJECT_DIR$/configuration/config-feign/config-feign.iml" filepath="$PROJECT_DIR$/configuration/config-feign/config-feign.iml" />
       <module fileurl="file://$PROJECT_DIR$/configuration/config-sentinel/config-sentinel.iml" filepath="$PROJECT_DIR$/configuration/config-sentinel/config-sentinel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configuration/config-starter/config-sentinel (1).iml" filepath="$PROJECT_DIR$/configuration/config-starter/config-sentinel (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/configuration/config-starter/config-starter.iml" filepath="$PROJECT_DIR$/configuration/config-starter/config-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configuration/config-starter/config-starter-mail/config-starter-mail.iml" filepath="$PROJECT_DIR$/configuration/config-starter/config-starter-mail/config-starter-mail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configuration/config-starter/config-starter-sms/config-starter-sms.iml" filepath="$PROJECT_DIR$/configuration/config-starter/config-starter-sms/config-starter-sms.iml" />
       <module fileurl="file://$PROJECT_DIR$/configuration/configuration.iml" filepath="$PROJECT_DIR$/configuration/configuration.iml" />
       <module fileurl="file://$PROJECT_DIR$/dependencies/dependencies.iml" filepath="$PROJECT_DIR$/dependencies/dependencies.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />

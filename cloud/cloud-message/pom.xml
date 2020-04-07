@@ -67,10 +67,8 @@
     </dependencies>
 
     <modules>
-        <module>cloud-api-message</module>
-        <module>cloud-dto-message</module>
-        <module>cloud-feign-message</module>
-        <module>cloud-service-message</module>
+        <module>cloud-message-client</module>
+        <module>cloud-message-service</module>
     </modules>
 
 </project>

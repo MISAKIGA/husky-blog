@@ -15,6 +15,11 @@
         <option value="$PROJECT_DIR$/cloud/cloud-api-message/pom.xml" />
         <option value="$PROJECT_DIR$/cloud/cloud-dto-message/pom.xml" />
         <option value="$PROJECT_DIR$/cloud/cloud-feign-message/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/cloud-message/cloud-api-message/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/cloud-message/cloud-dto-message/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/cloud-message/cloud-feign-message/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/cloud-message/cloud-service-message/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud/cloud-notification/Cloud-notification-model/pom.xml" />
         <option value="$PROJECT_DIR$/cloud/cloud-service-message/pom.xml" />
         <option value="$PROJECT_DIR$/commons/comm-dto/pom.xml" />
         <option value="$PROJECT_DIR$/commons/comm-service/pom.xml" />

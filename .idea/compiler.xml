@@ -6,28 +6,35 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="cloud-api-message" />
-        <module name="cloud-dto-message" />
-        <module name="business-service-profile" />
         <module name="comm-provider" />
         <module name="provider-uc-api-member" />
-        <module name="provider-uc-api-admin" />
-        <module name="gateway" />
-        <module name="comm-utils" />
-        <module name="cloud-feign-message" />
-        <module name="provider-uc-service-admin" />
-        <module name="provider-uc-model" />
-        <module name="config-sentinel" />
-        <module name="cloud-service-message" />
-        <module name="message-uc-login-log-admin" />
-        <module name="config-feign" />
-        <module name="provider-uc-service-member" />
-        <module name="business-client-profile" />
-        <module name="comm-core" />
         <module name="provider-uc-service-login-log-admin" />
+        <module name="cloud-message-service" />
+        <module name="config-starter-sms" />
+        <module name="config-feign" />
+        <module name="cloud-vcc-service" />
         <module name="business-client-oauth2" />
+        <module name="cloud-feign-message (1)" />
+        <module name="cloud-message-client" />
+        <module name="provider-uc-model" />
+        <module name="business-service-profile" />
+        <module name="business-client-profile" />
+        <module name="config-sentinel (1)" />
+        <module name="message-uc-login-log-admin" />
         <module name="provider-uc-api-login-log-admin" />
+        <module name="config-sentinel" />
+        <module name="comm-core" />
+        <module name="provider-uc-api-admin" />
+        <module name="provider-uc-service-member" />
+        <module name="cloud-vcc-client" />
+        <module name="comm-utils" />
         <module name="business-service-oauth2" />
+        <module name="provider-uc-service-admin" />
+        <module name="comm-sender" />
+        <module name="cloud-notification-service" />
+        <module name="gateway" />
+        <module name="config-starter-mail" />
+        <module name="cloud-notification-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -42,7 +49,14 @@
       <module name="cloud-api-message" target="1.8" />
       <module name="cloud-dto-message" target="1.8" />
       <module name="cloud-feign-message" target="1.8" />
+      <module name="cloud-feign-message (1)" target="1.8" />
       <module name="cloud-message" target="1.8" />
+      <module name="cloud-message-client" target="1.8" />
+      <module name="cloud-message-service" target="1.8" />
+      <module name="cloud-notification" target="1.8" />
+      <module name="cloud-notification-api" target="1.8" />
+      <module name="cloud-notification-model" target="1.8" />
+      <module name="cloud-notification-service" target="1.8" />
       <module name="cloud-service-message" target="1.8" />
       <module name="cloud-vcc" target="1.8" />
       <module name="cloud-vcc-client" target="1.8" />
@@ -50,11 +64,16 @@
       <module name="comm-core" target="1.8" />
       <module name="comm-dto" target="1.8" />
       <module name="comm-provider" target="1.8" />
+      <module name="comm-sender" target="1.8" />
       <module name="comm-service" target="1.8" />
       <module name="comm-utils" target="1.8" />
       <module name="commons" target="1.8" />
       <module name="config-feign" target="1.8" />
       <module name="config-sentinel" target="1.8" />
+      <module name="config-sentinel (1)" target="1.8" />
+      <module name="config-starter" target="1.8" />
+      <module name="config-starter-mail" target="1.8" />
+      <module name="config-starter-sms" target="1.8" />
       <module name="configuration" target="1.8" />
       <module name="dependencies" target="1.5" />
       <module name="feign-oauth" target="1.8" />
@@ -100,14 +119,27 @@
       <module name="cloud-api-message" options="-parameters" />
       <module name="cloud-dto-message" options="-parameters" />
       <module name="cloud-feign-message" options="-parameters" />
+      <module name="cloud-feign-message (1)" options="-parameters" />
+      <module name="cloud-message-client" options="-parameters" />
+      <module name="cloud-message-service" options="-parameters" />
+      <module name="cloud-notification-api" options="-parameters" />
+      <module name="cloud-notification-model" options="-parameters" />
+      <module name="cloud-notification-service" options="-parameters" />
       <module name="cloud-service-message" options="-parameters" />
+      <module name="cloud-vcc-client" options="-parameters" />
+      <module name="cloud-vcc-service" options="-parameters" />
       <module name="comm-core" options="-parameters" />
       <module name="comm-dto" options="-parameters" />
       <module name="comm-provider" options="-parameters" />
+      <module name="comm-sender" options="-parameters" />
       <module name="comm-service" options="-parameters" />
       <module name="comm-utils" options="-parameters" />
       <module name="config-feign" options="-parameters" />
       <module name="config-sentinel" options="-parameters" />
+      <module name="config-sentinel (1)" options="-parameters" />
+      <module name="config-starter" options="-parameters" />
+      <module name="config-starter-mail" options="-parameters" />
+      <module name="config-starter-sms" options="-parameters" />
       <module name="feign-oauth" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="login-log-admin" options="-parameters" />

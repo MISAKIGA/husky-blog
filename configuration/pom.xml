@@ -21,6 +21,7 @@
     </licenses>
 
     <modules>
+        <module>config-starter</module>
         <module>config-feign</module>
         <module>config-sentinel</module>
     </modules>

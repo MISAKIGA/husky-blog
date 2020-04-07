@@ -5,12 +5,12 @@
 
     <parent>
         <groupId>com.misakiga.husky</groupId>
-        <artifactId>cloud</artifactId>
+        <artifactId>cloud-vcc</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>cloud-vcc-client</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <inceptionYear>2020-Now</inceptionYear>
 
     <licenses>

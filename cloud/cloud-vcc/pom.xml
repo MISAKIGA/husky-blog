@@ -24,5 +24,4 @@
         <module>cloud-vcc-client</module>
         <module>cloud-vcc-service</module>
     </modules>
-
 </project>

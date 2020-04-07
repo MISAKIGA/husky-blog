@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.misakiga.husky.starter.sms.SmsAutoConfiguration
