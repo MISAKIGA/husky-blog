@@ -105,12 +105,7 @@
 
         <dependency>
             <groupId>com.misakiga.husky</groupId>
-            <artifactId>cloud-api-message</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.misakiga.husky</groupId>
-            <artifactId>cloud-feign-message</artifactId>
+            <artifactId>cloud-message-client</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>

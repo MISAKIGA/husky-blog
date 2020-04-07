@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 通知中心
  * @author MISAKIGA
  */
-@RestController("/notification")
+@RestController()
 public class NotificationController {
 
 }
