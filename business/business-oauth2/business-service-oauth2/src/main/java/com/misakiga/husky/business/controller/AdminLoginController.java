@@ -125,7 +125,7 @@ public class AdminLoginController extends BaseController {
         }
 
         //发送管理员登录日志
-        //sendAdminLoginLog(loginParam.getUsername(),request);
+        sendAdminLoginLog(loginParam.getUsername(),request);
         return this.success("登录成功",result);
     }
 

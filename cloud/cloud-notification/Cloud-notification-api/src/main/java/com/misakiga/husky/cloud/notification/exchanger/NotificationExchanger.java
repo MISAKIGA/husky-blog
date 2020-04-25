@@ -9,5 +9,5 @@ public interface NotificationExchanger {
 
     boolean support(Object notification);
 
-    boolean exchange(Notification notification);
+    boolean exchange(Object notification);
 }

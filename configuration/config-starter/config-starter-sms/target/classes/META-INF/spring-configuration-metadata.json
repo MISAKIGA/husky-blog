@@ -1,0 +1,29 @@
+{
+  "groups": [
+    {
+      "name": "husky.sms.aliyun",
+      "type": "com.misakiga.husky.starter.mail.config.AliyunSmsProperties",
+      "sourceType": "com.misakiga.husky.starter.mail.config.AliyunSmsProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "husky.sms.aliyun.access-key-id",
+      "type": "java.lang.String",
+      "description": "A description for 'husky.sms.aliyun.access-key-id'",
+      "sourceType": "com.misakiga.husky.starter.mail.config.AliyunSmsProperties"
+    },
+    {
+      "name": "husky.sms.aliyun.access-key-secret",
+      "type": "java.lang.String",
+      "description": "A description for 'husky.sms.aliyun.access-key-secret'",
+      "sourceType": "com.misakiga.husky.starter.mail.config.AliyunSmsProperties"
+    },
+    {
+      "name": "husky.sms.type",
+      "type": "java.lang.String",
+      "description": "A description for 'husky.sms.type'"
+    }
+  ],
+  "hints": []
+}

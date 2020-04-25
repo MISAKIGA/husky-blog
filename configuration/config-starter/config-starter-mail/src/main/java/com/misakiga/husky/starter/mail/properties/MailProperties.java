@@ -1,4 +1,4 @@
-package com.misakiga.husky.starter.sms.properties;
+package com.misakiga.husky.starter.mail.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

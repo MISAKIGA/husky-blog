@@ -1,8 +1,8 @@
 package com.misakiga.husky.cloud.notification.exchanger;
 
 import com.misakiga.husky.cloud.notification.model.EmailNotification;
-import com.misakiga.husky.cloud.notification.model.Notification;
 import com.misakiga.husky.comm.mail.MailSender;
+import com.misakiga.husky.comm.mail.MailSenderParams;
 
 /**
  * @author MISAKIGA
@@ -21,7 +21,14 @@ public class EmailNotificationExchanger implements NotificationExchanger {
     }
 
     @Override
-    public boolean exchange(Notification notification) {
-        return false;
+    public boolean exchange(Object notification) {
+        EmailNotification emailNotification = (EmailNotification)notification;
+        MailSenderParams params = new MailSenderParams();
+        params.setMailTo(emailNotification.getReceiver());
+        params.setContent(emailNotification.getContent());
+        params.setTitle(emailNotification.getTitle());
+
+        mailSender.sendSimpleMail(params);
+        return true;
     }
 }

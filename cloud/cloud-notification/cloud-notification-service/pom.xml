@@ -21,6 +21,11 @@
     </licenses>
 
     <dependencies>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <optional>true</optional>
+        </dependency>
         <!--spring boot-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -33,12 +38,12 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
 
         <!-- Spring Cloud Alibaba  -->
@@ -50,6 +55,11 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+        <!-- Rocketmq 消息队列 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
         </dependency>
 
         <!-- Apache Dubbo -->
@@ -115,6 +125,21 @@
         <dependency>
             <groupId>com.misakiga.husky</groupId>
             <artifactId>comm-sender</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.misakiga.husky</groupId>
+            <artifactId>comm-core</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.misakiga.husky</groupId>
+            <artifactId>config-starter-mail</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.misakiga.husky</groupId>
+            <artifactId>config-starter-sms</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>

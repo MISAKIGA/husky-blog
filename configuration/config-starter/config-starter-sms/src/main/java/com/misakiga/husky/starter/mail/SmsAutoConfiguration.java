@@ -1,9 +1,9 @@
-package com.misakiga.husky.starter.sms;
+package com.misakiga.husky.starter.mail;
 
 
 import com.misakiga.husky.comm.sms.Sender.AliyunSmsSender;
 import com.misakiga.husky.comm.sms.SmsSender;
-import com.misakiga.husky.starter.sms.config.AliyunSmsProperties;
+import com.misakiga.husky.starter.mail.config.AliyunSmsProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -14,6 +14,9 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * @author MISAKIGA
+ */
 @Configuration
 @EnableConfigurationProperties({AliyunSmsProperties.class})
 public class SmsAutoConfiguration {

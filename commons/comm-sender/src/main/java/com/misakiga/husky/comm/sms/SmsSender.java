@@ -10,5 +10,5 @@ public interface SmsSender {
      * @param parameter
      * @return
      */
-    public SmsSendResult send(SmsParameter parameter);
+    SmsSendResult send(SmsParameter parameter);
 }

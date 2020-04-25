@@ -9,9 +9,8 @@ import org.springframework.messaging.MessageChannel;
  */
 public interface MessageSource {
 
-    @Output("admin-login-log-topic")
-    MessageChannel adminLoginLog();
+    String LOGIN_LOG_TOPIC = "admin-login-log-topic";
 
-    @Output("notification-task-topic")
-    MessageChannel notificationTask();
+    @Output(LOGIN_LOG_TOPIC)
+    MessageChannel adminLoginLog();
 }

@@ -1,7 +1,10 @@
 package com.misakiga.husky.cloud.tests;
 
 import com.misakiga.husky.cloud.api.MessageService;
+import com.misakiga.husky.cloud.api.NotificationMessageService;
+import com.misakiga.husky.cloud.message.NotificationMessageSource;
 import com.misakiga.husky.cloud.notification.model.EmailNotification;
+import org.apache.dubbo.config.annotation.Reference;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +15,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class NotificationTest {
 
-    @Autowired
-    private MessageService messageService;
+    @Reference(version = "1.0.0")
+    private NotificationMessageService messageService;
 
     @Test
     public void testNotification(){

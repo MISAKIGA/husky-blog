@@ -2,7 +2,6 @@ package com.misakiga.husky.cloud.notification.exchanger;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.misakiga.husky.cloud.notification.model.Notification;
 import com.misakiga.husky.cloud.notification.model.SmsNotification;
 import com.misakiga.husky.comm.sms.SmsParameter;
 import com.misakiga.husky.comm.sms.SmsSendResult;
@@ -43,7 +42,7 @@ public class SmsNotificationExchanger implements NotificationExchanger {
     }
 
     @Override
-    public boolean exchange(Notification notification) {
+    public boolean exchange(Object notification) {
         Assert.notNull(smsSender, "短信接口没有初始化");
 
         SmsNotification smsNotification = (SmsNotification) notification;

@@ -26,14 +26,4 @@ public class MessageProducer implements MessageService {
     public boolean sendAdminLoginLog(UmsAdminLoginLogDTO dto){
         return source.adminLoginLog().send(MessageBuilder.withPayload(dto).build());
     }
-
-    /**
-     * 发送通知
-     * @param notification {@link Notification}
-     * @return 发送是否成功
-     */
-    @Override
-    public boolean notificationTask(Notification notification) {
-        return source.notificationTask().send(MessageBuilder.withPayload(notification).build());
-    }
 }

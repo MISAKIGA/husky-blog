@@ -1,0 +1,28 @@
+{
+  "groups": [
+    {
+      "name": "spring.mail",
+      "type": "com.misakiga.husky.starter.mail.properties.MailProperties",
+      "sourceType": "com.misakiga.husky.starter.mail.properties.MailProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.mail.from",
+      "type": "java.lang.String",
+      "sourceType": "com.misakiga.husky.starter.mail.properties.MailProperties"
+    },
+    {
+      "name": "spring.mail.name",
+      "type": "java.lang.String",
+      "sourceType": "com.misakiga.husky.starter.mail.properties.MailProperties"
+    },
+    {
+      "name": "spring.mail.prefer-i-pv4-stack",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.misakiga.husky.starter.mail.properties.MailProperties",
+      "defaultValue": false
+    }
+  ],
+  "hints": []
+}

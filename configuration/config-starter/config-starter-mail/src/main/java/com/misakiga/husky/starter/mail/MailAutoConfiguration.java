@@ -1,7 +1,7 @@
-package com.misakiga.husky.starter.sms;
+package com.misakiga.husky.starter.mail;
 
 import com.misakiga.husky.comm.mail.MailSender;
-import com.misakiga.husky.starter.sms.properties.MailProperties;
+import com.misakiga.husky.starter.mail.properties.MailProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;

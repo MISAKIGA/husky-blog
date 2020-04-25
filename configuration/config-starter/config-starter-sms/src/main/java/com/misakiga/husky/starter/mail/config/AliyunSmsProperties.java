@@ -1,4 +1,4 @@
-package com.misakiga.husky.starter.sms.config;
+package com.misakiga.husky.starter.mail.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
