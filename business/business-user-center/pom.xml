@@ -29,6 +29,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+        <!--project-->
         <dependency>
             <groupId>com.misakiga.husky</groupId>
             <artifactId>config-feign</artifactId>

@@ -6,7 +6,6 @@ import com.misakiga.husky.cloud.notification.model.EmailNotification;
 import com.misakiga.husky.cloud.notification.model.Notification;
 import com.misakiga.husky.cloud.notification.sink.NotificationSink;
 import com.misakiga.husky.cloud.notification.task.NotificationTask;
-import org.apache.dubbo.config.annotation.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
@@ -14,6 +13,7 @@ import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.messaging.handler.annotation.Payload;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.Map;
@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
  * 通知处理
  * @author MISAKIGA
  */
-@Service(version = "1.0.0")
+@Service
 public class NotificationDispatcher implements ApplicationContextAware {
 
 
@@ -51,6 +51,11 @@ public class NotificationDispatcher implements ApplicationContextAware {
                 if(exchanger.support(notification)){
                     //添加到线程池处理
                     executorService.submit(new NotificationTask(exchanger,notification));
+                    try {
+                        Thread.sleep(3_000000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             });
         }

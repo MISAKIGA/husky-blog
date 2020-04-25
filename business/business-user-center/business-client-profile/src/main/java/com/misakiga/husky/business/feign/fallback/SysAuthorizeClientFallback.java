@@ -1,10 +1,7 @@
 package com.misakiga.husky.business.feign.fallback;
 
-import com.misakiga.husky.business.BusinessStatus;
 import com.misakiga.husky.business.dto.UmsAdminDTO;
 import com.misakiga.husky.business.feign.SysAuthorizeClient;
-import com.misakiga.husky.commons.dto.ResponseResult;
-import com.misakiga.husky.commons.utils.MapperUtils;
 import com.misakiga.husky.uc.model.Authorize;
 import org.springframework.stereotype.Component;
 

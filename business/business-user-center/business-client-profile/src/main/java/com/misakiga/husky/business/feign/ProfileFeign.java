@@ -3,7 +3,6 @@ package com.misakiga.husky.business.feign;
 import com.misakiga.husky.business.dto.params.IconParam;
 import com.misakiga.husky.business.dto.params.PasswordParam;
 import com.misakiga.husky.business.dto.params.ProfileParam;
-import com.misakiga.husky.commons.dto.ResponseResult;
 import com.misakiga.husky.configuration.FeignRequestConfiguration;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

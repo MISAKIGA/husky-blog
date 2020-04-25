@@ -1,4 +1,4 @@
-package com.misakiga.husky.business;
+package com.misakiga.husky.comm.business;
 
 /**
  * 全局业务状态码

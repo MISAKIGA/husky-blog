@@ -76,6 +76,11 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>eu.bitwalker</groupId>
+            <artifactId>UserAgentUtils</artifactId>
+        </dependency>
+
         <!--project-->
         <dependency>
             <groupId>com.misakiga.husky</groupId>
@@ -102,10 +107,14 @@
             <artifactId>business-client-oauth2</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
-
         <dependency>
             <groupId>com.misakiga.husky</groupId>
             <artifactId>cloud-message-client</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.misakiga.husky</groupId>
+            <artifactId>comm-utils</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>

@@ -55,6 +55,7 @@ public class MailSender {
              helper.setText(params.getContent(), true);
              this.addAttachment(helper,params);
          } catch (Exception e) {
+             logger.error("发送邮件异常!" + e);
              throw new RuntimeException("发送邮件异常! from: " + name+ "! to: " + params.getMailTo());
          }
          javaMailSender.send(message);
@@ -74,7 +75,7 @@ public class MailSender {
             helper.setText(params.getContent(), true);
             this.addAttachment(helper,params);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("发送邮件异常!" + e);
             throw new RuntimeException("发送邮件异常! from: " + name+ "! to: " + params.getMailTo());
         }
         javaMailSender.send(message);
@@ -94,6 +95,7 @@ public class MailSender {
             helper.setText(params.getContent(), true);
             this.addAttachment(helper,params);
         } catch (Exception e) {
+            logger.error("发送邮件异常!" + e);
             throw new RuntimeException("发送邮件异常! from: " + name + "! to: " + params.getMailTo());
         }
         javaMailSender.send(message);
@@ -116,6 +118,7 @@ public class MailSender {
             String html = FreeMarkerTemplateUtils.processTemplateIntoString(template, params.getTemplateModels());
             helper.setText(html, true);
         } catch (Exception e) {
+            logger.error("发送邮件异常!" + e);
             throw new RuntimeException("发送邮件异常! from: " + name + "! to: " + params.getMailTo());
         }
         javaMailSender.send(message);
@@ -175,7 +178,7 @@ public class MailSender {
         JavaMailSenderImpl js=new JavaMailSenderImpl();
         js.setHost("smtp.qq.com");
         js.setUsername("galoliy@foxmail.com");
-        js.setPassword("lrmydhwwttfffjhe");
+        js.setPassword("hsewzbzhzaczhibj");
         Properties props = new Properties();
         props.put("mail.smtp.auth", true);
         props.put("mail.smtp.ssl.enable", true);

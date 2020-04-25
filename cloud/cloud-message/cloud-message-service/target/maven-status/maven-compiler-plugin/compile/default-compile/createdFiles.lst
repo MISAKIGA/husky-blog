@@ -1,5 +1,0 @@
-com\misakiga\husky\cloud\producer\MessageProducer.class
-com\misakiga\husky\cloud\message\MessageSource.class
-com\misakiga\husky\cloud\controller\MessageController.class
-com\misakiga\husky\cloud\configure\MessageResourceServerConfiguration.class
-com\misakiga\husky\cloud\CloudMessageBootstrap.class

@@ -1,6 +1,6 @@
 package com.misakiga.husky.comm.base;
 
-import com.misakiga.husky.business.BusinessStatus;
+import com.misakiga.husky.comm.business.BusinessStatus;
 import com.misakiga.husky.comm.dto.ResponseResult;
 
 /**

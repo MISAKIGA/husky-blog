@@ -1,13 +1,13 @@
 package com.misakiga.husky.business.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
-import com.misakiga.husky.business.BusinessStatus;
 import com.misakiga.husky.business.controller.fallback.ProfileControllerFallback;
 import com.misakiga.husky.business.dto.UmsAdminDTO;
 import com.misakiga.husky.business.dto.params.IconParam;
 import com.misakiga.husky.business.dto.params.PasswordParam;
 import com.misakiga.husky.business.dto.params.ProfileParam;
-import com.misakiga.husky.commons.dto.ResponseResult;
+import com.misakiga.husky.comm.business.BusinessStatus;
+import com.misakiga.husky.comm.dto.ResponseResult;
 import com.misakiga.husky.provider.api.UmsAdminService;
 import com.misakiga.husky.provider.domain.UmsAdmin;
 import com.misakiga.husky.uc.model.SysUserAuthentication;

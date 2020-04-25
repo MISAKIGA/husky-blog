@@ -1,6 +1,6 @@
-package com.misakiga.husky.business;
+package com.misakiga.husky.comm.business;
 
-import com.misakiga.husky.commons.dto.ResponseResult;
+import com.misakiga.husky.comm.dto.ResponseResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

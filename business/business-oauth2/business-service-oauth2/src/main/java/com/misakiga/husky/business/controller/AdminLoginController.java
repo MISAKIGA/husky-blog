@@ -1,8 +1,6 @@
 package com.misakiga.husky.business.controller;
 
 import com.google.common.collect.Maps;
-import com.misakiga.husky.business.BusinessException;
-import com.misakiga.husky.business.BusinessStatus;
 import com.misakiga.husky.business.dto.LoginInfo;
 import com.misakiga.husky.business.dto.LoginParam;
 import com.misakiga.husky.business.feign.ProfileFeign;
@@ -10,6 +8,8 @@ import com.misakiga.husky.business.feign.SysAuthorizeClient;
 import com.misakiga.husky.cloud.api.MessageService;
 import com.misakiga.husky.cloud.dto.UmsAdminLoginLogDTO;
 import com.misakiga.husky.comm.base.BaseController;
+import com.misakiga.husky.comm.business.BusinessException;
+import com.misakiga.husky.comm.business.BusinessStatus;
 import com.misakiga.husky.comm.dto.ResponseResult;
 import com.misakiga.husky.commons.utils.MapperUtils;
 import com.misakiga.husky.commons.utils.OkHttpClientUtil;

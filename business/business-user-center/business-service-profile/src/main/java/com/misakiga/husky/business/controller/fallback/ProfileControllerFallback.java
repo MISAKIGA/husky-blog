@@ -1,9 +1,9 @@
 package com.misakiga.husky.business.controller.fallback;
 
-import com.misakiga.husky.business.BusinessStatus;
 import com.misakiga.husky.business.dto.UmsAdminDTO;
 import com.misakiga.husky.business.feign.fallback.ProfileFeignFallback;
-import com.misakiga.husky.commons.dto.ResponseResult;
+import com.misakiga.husky.comm.business.BusinessStatus;
+import com.misakiga.husky.comm.dto.ResponseResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

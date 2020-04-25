@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
+
 /**
  * 通知中心
  * @author MISAKIGA
@@ -18,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("notification")
 public class NotificationController {
 
-    @Reference(version = "1.0.0")
+    @Autowired(required = false)
     private NotificationDispatcher dispatcher;
 
     @PostMapping("/send/sms")

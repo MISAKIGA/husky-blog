@@ -6,13 +6,6 @@ import java.io.Serializable;
 
 /**
  * IP 地址信息
- * <p>
- * Description:
- * </p>
- *
- * @author Lusifer
- * @version v1.0.0
- * @date 2019-10-22 07:32:02
  */
 @Data
 public class IpInfo implements Serializable {

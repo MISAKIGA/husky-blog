@@ -1,5 +1,7 @@
 package com.misakiga.husky.comm.sms;
 
+import java.util.Map;
+
 /**
  *
  * 短信发送响应结果
@@ -7,24 +9,28 @@ package com.misakiga.husky.comm.sms;
  */
 public class SmsSendResult {
 
-    private boolean success;
+    private Map<String,Object> data;
 
-    private String code;
-
-    public boolean isSuccess() {
-        return success;
+    public  Map<String,Object> getData() {
+        return data;
     }
 
-    public void setSuccess(boolean success) {
-        this.success = success;
+    public void setData(Map<String,Object> data) {
+        this.data = data;
     }
 
-    public String getCode() {
-        return code;
+    public boolean isSuccess(){
+        if(data != null){
+            return "OK".equals(data.get("Code"));
+        }
+        return false;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public String getCode(){
+        if(data != null){
+            return data.get("Code").toString();
+        }
+        return "";
     }
 
 }
