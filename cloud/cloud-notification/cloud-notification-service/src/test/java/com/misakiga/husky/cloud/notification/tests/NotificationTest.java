@@ -3,7 +3,7 @@ package com.misakiga.husky.cloud.notification.tests;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.misakiga.husky.cloud.notification.NotificationBootstrap;
-import com.misakiga.husky.cloud.notification.consumer.NotificationDispatcher;
+import com.misakiga.husky.cloud.notification.consumer.impl.NotificationDispatcherImpl;
 import com.misakiga.husky.cloud.notification.model.EmailNotification;
 import com.misakiga.husky.cloud.notification.model.SmsNotification;
 import com.misakiga.husky.comm.mail.MailSender;
@@ -11,13 +11,10 @@ import com.misakiga.husky.comm.mail.MailSenderParams;
 import com.misakiga.husky.comm.sms.SmsParameter;
 import com.misakiga.husky.comm.sms.SmsSendResult;
 import com.misakiga.husky.comm.sms.SmsSender;
-import org.apache.dubbo.config.annotation.Reference;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
@@ -31,7 +28,7 @@ import java.util.Map;
 public class NotificationTest {
 
     @Autowired
-    private NotificationDispatcher dispatcher;
+    private NotificationDispatcherImpl dispatcher;
 
 
     @Test

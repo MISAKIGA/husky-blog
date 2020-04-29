@@ -56,6 +56,7 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
+
         <!-- Rocketmq 消息队列 -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
