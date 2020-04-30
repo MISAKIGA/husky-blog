@@ -9,7 +9,7 @@ import java.util.Map;
  */
 @Data
 public class SmsNotification extends Notification {
-
+    private static final long serialVersionUID = 5655540941187637923L;
     private String phoneNumber;
 
     private String templateCode;

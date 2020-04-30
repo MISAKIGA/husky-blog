@@ -10,33 +10,32 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Redis缓存，会自动过期
- * @author MISAKIGA
  */
 @Component
 public class RedisVerificationCodeCache implements VerificationCodeCache{
 
     @Resource
-    private StringRedisTemplate redisTemplate;
+    private StringRedisTemplate stringRedisTemplate;
 
 
-    public RedisVerificationCodeCache(StringRedisTemplate redisTemplate) {
-        this.redisTemplate = redisTemplate;
+    public RedisVerificationCodeCache(StringRedisTemplate stringRedisTemplate) {
+        this.stringRedisTemplate = stringRedisTemplate;
     }
 
     @Override
     public void set(String cacheName, String key, String value, long expire){
-        redisTemplate.opsForValue().set(cacheName + ":" + key,value);
-        redisTemplate.expire(cacheName + ":" + key,expire, TimeUnit.MILLISECONDS);
+        stringRedisTemplate.opsForValue().set(cacheName + ":" + key,value);
+        stringRedisTemplate.expire(cacheName + ":" + key,expire, TimeUnit.MILLISECONDS);
     }
 
     @Override
     public void remove(String cacheName, String key) {
-        redisTemplate.delete(cacheName + ":" + key);
+        stringRedisTemplate.delete(cacheName + ":" + key);
     }
 
     @Override
     public String get(String cacheName, String key){
-        return redisTemplate.opsForValue().get(cacheName + ":" + key);
+        return stringRedisTemplate.opsForValue().get(cacheName + ":" + key);
     }
 
     @Override
@@ -50,6 +49,6 @@ public class RedisVerificationCodeCache implements VerificationCodeCache{
 
     @Override
     public boolean isExpire(String cacheName, String key) {
-        return redisTemplate.opsForValue().get(cacheName + ":" + key) == null;
+        return stringRedisTemplate.opsForValue().get(cacheName + ":" + key) == null;
     }
 }

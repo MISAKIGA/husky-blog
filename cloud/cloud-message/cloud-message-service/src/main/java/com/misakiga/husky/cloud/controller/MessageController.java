@@ -16,4 +16,5 @@ public class MessageController {
     @Resource
     private MessageProducer producer;
 
+
 }

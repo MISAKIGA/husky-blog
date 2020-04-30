@@ -7,15 +7,13 @@ import org.springframework.util.StringUtils;
 
 /**
  * 普通的缓存，手动控制过期时间，不会自动过去，建议在测试环境下使用
- * @author LIQIU
- * @date 2018-3-16
  **/
 public class GeneralVerificationCodeCache implements VerificationCodeCache {
 
     private CacheManager cacheManager;
 
     public GeneralVerificationCodeCache(CacheManager cacheManager){
-        Assert.notNull(cacheManager,"CacheManager nust not be null");
+        Assert.notNull(cacheManager,"CacheManager must not be null");
     }
 
     @Override

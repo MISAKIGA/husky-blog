@@ -19,15 +19,16 @@
         <module name="provider-uc-model" />
         <module name="business-service-profile" />
         <module name="business-client-profile" />
+        <module name="message-notification" />
         <module name="config-sentinel (1)" />
         <module name="message-uc-login-log-admin" />
         <module name="provider-uc-api-login-log-admin" />
-        <module name="config-sentinel" />
         <module name="comm-core" />
         <module name="provider-uc-api-admin" />
         <module name="provider-uc-service-member" />
         <module name="cloud-vcc-client" />
         <module name="comm-utils" />
+        <module name="config-sentinel" />
         <module name="business-service-oauth2" />
         <module name="provider-uc-service-admin" />
         <module name="comm-sender" />
@@ -80,6 +81,7 @@
       <module name="gateway" target="1.8" />
       <module name="login-log-admin" target="1.8" />
       <module name="message" target="1.8" />
+      <module name="message-notification" target="1.8" />
       <module name="message-uc-login-log-admin" target="1.8" />
       <module name="message-user-center" target="1.8" />
       <module name="parent" target="1.8" />
@@ -143,6 +145,7 @@
       <module name="feign-oauth" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="login-log-admin" options="-parameters" />
+      <module name="message-notification" options="-parameters" />
       <module name="message-uc-login-log-admin" options="-parameters" />
       <module name="profile-feign" options="-parameters" />
       <module name="profile-service" options="-parameters" />

@@ -1,6 +1,7 @@
 package com.misakiga.husky.cloud.api;
 
 import com.misakiga.husky.cloud.dto.UmsAdminLoginLogDTO;
+import com.misakiga.husky.cloud.notification.model.EmailNotification;
 import com.misakiga.husky.cloud.notification.model.Notification;
 
 /**
@@ -13,5 +14,5 @@ public interface NotificationMessageService {
      * @param notification
      * @return
      */
-    boolean notificationTask(Notification notification);
+     boolean notificationTask(String notification);
 }

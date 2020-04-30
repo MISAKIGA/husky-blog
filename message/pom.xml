@@ -22,5 +22,6 @@
 
     <modules>
         <module>message-user-center</module>
+        <module>message-notification</module>
     </modules>
 </project>

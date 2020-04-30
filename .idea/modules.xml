@@ -35,6 +35,7 @@
       <module fileurl="file://$PROJECT_DIR$/dependencies/dependencies.iml" filepath="$PROJECT_DIR$/dependencies/dependencies.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/message/message.iml" filepath="$PROJECT_DIR$/message/message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/message/message-notification/message-notification.iml" filepath="$PROJECT_DIR$/message/message-notification/message-notification.iml" />
       <module fileurl="file://$PROJECT_DIR$/message/message-user-center/message-uc-login-log-admin/message-uc-login-log-admin.iml" filepath="$PROJECT_DIR$/message/message-user-center/message-uc-login-log-admin/message-uc-login-log-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/message/message-user-center/message-user-center.iml" filepath="$PROJECT_DIR$/message/message-user-center/message-user-center.iml" />
       <module fileurl="file://$PROJECT_DIR$/parent.iml" filepath="$PROJECT_DIR$/parent.iml" />

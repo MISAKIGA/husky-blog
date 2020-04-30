@@ -25,6 +25,6 @@ public class NotificationTest {
         emailNotification.setReceiver("2595903671@qq.com");
         emailNotification.setTitle("T'm Title");
 
-        messageService.notificationTask(emailNotification);
+        messageService.notificationTask("");
     }
 }

@@ -23,6 +23,7 @@
     <file url="file://$PROJECT_DIR$/configuration/config-starter/config-starter-sms/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/configuration/config-starter/config-starter-sms/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/message/message-notification/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/message/message-user-center/message-uc-login-log-admin/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/provider/provider-user-center/provider-uc-api-admin/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/provider/provider-user-center/provider-uc-api-login-log-admin/src/main/java" charset="UTF-8" />

@@ -788,7 +788,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
             }
             if (Character.isUpperCase(c)) {
                 if (!isPreUpperCase || !isNextUpperCase) {
-                    if (i > 0) sb.append("/");
+                    if (i > 0) {sb.append("/");}
                 }
                 isPreUpperCase = true;
             } else {
@@ -823,7 +823,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
             }
             if (Character.isUpperCase(c)) {
                 if (!isPreUpperCase || !isNextUpperCase) {
-                    if (i > 0) sb.append(UNDERLINE);
+                    if (i > 0){ sb.append(UNDERLINE);}
                 }
                 isPreUpperCase = true;
             } else {
